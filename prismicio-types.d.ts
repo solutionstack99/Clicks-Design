@@ -4,6 +4,71 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type HomepageDocumentDataSlicesSlice = CtaButtonSlice;
+
+/**
+ * Content for Homepage documents
+ */
+interface HomepageDocumentData {
+  /**
+   * Slice Zone field in *Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
+   * Meta Description field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: homepage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: homepage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Homepage document from Prismic
+ *
+ * - **API ID**: `homepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomepageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomepageDocumentData>,
+    "homepage",
+    Lang
+  >;
+
 /**
  * Item in *Settings → Navigation*
  */
@@ -29,7 +94,7 @@ export interface SettingsDocumentDataNavigationItem {
   label: prismic.KeyTextField;
 }
 
-type SettingsDocumentDataSlicesSlice = never;
+type SettingsDocumentDataSlicesSlice = CtaButtonSlice;
 
 /**
  * Content for Settings documents
@@ -58,6 +123,17 @@ interface SettingsDocumentData {
   og_image: prismic.ImageField<never>;
 
   /**
+   * Logo field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
    * Navigation field in *Settings*
    *
    * - **Field Type**: Group
@@ -67,6 +143,28 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   navigation: prismic.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;
+
+  /**
+   * CTA Button Label field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.cta_button_label
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_button_label: prismic.KeyTextField;
+
+  /**
+   * CTA Button Link field in *Settings*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.cta_button_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_button_link: prismic.LinkField;
 
   /**
    * Slice Zone field in *Settings*
@@ -127,7 +225,83 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = SettingsDocument;
+export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+
+/**
+ * Primary content in *CtaButton → Default → Primary*
+ */
+export interface CtaButtonSliceDefaultPrimary {
+  /**
+   * CTA Button Label field in *CtaButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_button.default.primary.cta_button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_button_label: prismic.KeyTextField;
+
+  /**
+   * CTA Button Link field in *CtaButton → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_button.default.primary.cta_button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_button_link: prismic.LinkField;
+
+  /**
+   * Has calls booked text field in *CtaButton → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: cta_button.default.primary.has_calls_booked_text
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  has_calls_booked_text: prismic.BooleanField;
+
+  /**
+   * Calls booked field in *CtaButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_button.default.primary.calls_booked
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  calls_booked: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CtaButton Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaButtonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CtaButtonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CtaButton*
+ */
+type CtaButtonSliceVariation = CtaButtonSliceDefault;
+
+/**
+ * CtaButton Shared Slice
+ *
+ * - **API ID**: `cta_button`
+ * - **Description**: CtaButton
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaButtonSlice = prismic.SharedSlice<
+  "cta_button",
+  CtaButtonSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -139,11 +313,18 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      HomepageDocument,
+      HomepageDocumentData,
+      HomepageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       SettingsDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CtaButtonSlice,
+      CtaButtonSliceDefaultPrimary,
+      CtaButtonSliceVariation,
+      CtaButtonSliceDefault,
     };
   }
 }

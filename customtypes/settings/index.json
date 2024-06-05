@@ -21,6 +21,14 @@
           "thumbnails": []
         }
       },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "navigation": {
         "type": "Group",
         "config": {
@@ -45,11 +53,30 @@
           }
         }
       },
+      "cta_button_label": {
+        "type": "Text",
+        "config": {
+          "label": "CTA Button Label",
+          "placeholder": ""
+        }
+      },
+      "cta_button_link": {
+        "type": "Link",
+        "config": {
+          "label": "CTA Button Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "cta_button": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

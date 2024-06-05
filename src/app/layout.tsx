@@ -2,7 +2,8 @@ import { createClient } from "@/prismicio"; // Move this line up
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import Header from "@/app/components/header";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer"; // Change the import statement to use lowercase "footer"
 
 const lato = Lato({
   subsets: ["latin"],
@@ -35,8 +36,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={lato.variable}>
         <Header />
-        {children}
-        <footer>footer</footer>
+
+        <main className="container py-10">{children}</main>
+        <Footer />
       </body>
     </html>
   );
