@@ -75,6 +75,9 @@ const config = {
       },
     },
   },
+  variants: {
+    fill: ["hover", "focus"],
+  },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 

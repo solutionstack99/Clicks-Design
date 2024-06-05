@@ -1,0 +1,51 @@
+{
+  "format": "custom",
+  "id": "social_icons",
+  "label": "Social Icons",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "icons": {
+        "type": "Group",
+        "config": {
+          "label": "Icons",
+          "repeat": true,
+          "fields": {
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "social_icons": {
+              "type": "Select",
+              "config": {
+                "label": "Social Icons",
+                "placeholder": "",
+                "options": ["x", "linkedin", "email"]
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

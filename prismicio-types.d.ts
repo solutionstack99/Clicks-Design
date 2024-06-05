@@ -225,7 +225,90 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+/**
+ * Item in *Social Icons → Icons*
+ */
+export interface SocialIconsDocumentDataIconsItem {
+  /**
+   * Icon field in *Social Icons → Icons*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_icons.icons[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Social Icons field in *Social Icons → Icons*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_icons.icons[].social_icons
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  social_icons: prismic.SelectField<"x" | "linkedin" | "email">;
+
+  /**
+   * Link field in *Social Icons → Icons*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_icons.icons[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+type SocialIconsDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Social Icons documents
+ */
+interface SocialIconsDocumentData {
+  /**
+   * Icons field in *Social Icons*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_icons.icons[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  icons: prismic.GroupField<Simplify<SocialIconsDocumentDataIconsItem>>;
+
+  /**
+   * Slice Zone field in *Social Icons*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_icons.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SocialIconsDocumentDataSlicesSlice>;
+}
+
+/**
+ * Social Icons document from Prismic
+ *
+ * - **API ID**: `social_icons`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SocialIconsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SocialIconsDocumentData>,
+    "social_icons",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomepageDocument
+  | SettingsDocument
+  | SocialIconsDocument;
 
 /**
  * Primary content in *CtaButton → Default → Primary*
@@ -320,6 +403,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       SettingsDocumentDataSlicesSlice,
+      SocialIconsDocument,
+      SocialIconsDocumentData,
+      SocialIconsDocumentDataIconsItem,
+      SocialIconsDocumentDataSlicesSlice,
       AllDocumentTypes,
       CtaButtonSlice,
       CtaButtonSliceDefaultPrimary,
