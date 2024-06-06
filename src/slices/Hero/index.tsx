@@ -1,4 +1,3 @@
-import { createClient } from "@/prismicio";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 import Bounded from "@/app/components/Bounded/Bounded";
@@ -10,6 +9,7 @@ import {
 } from "@prismicio/react";
 import Heading from "@/app/components/Heading/Heading";
 import Button from "@/app/components/Button";
+import Typing from "@/app/components/Typing";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -83,6 +83,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             field={slice.primary.headeline}
             components={components}
           />
+          <Typing />
         </div>
 
         <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[640px] xs:max-w-[340px]">
