@@ -13,7 +13,7 @@ export default async function Header() {
   return (
     <Bounded
       as="header"
-      className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 container"
+      className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 py-5 container"
     >
       <Logo />
 
