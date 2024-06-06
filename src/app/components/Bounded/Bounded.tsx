@@ -13,7 +13,7 @@ export default function Bounded({
   ...restProps
 }: BoundedProps) {
   return (
-    <Comp className={clsx("w-full", className)} {...restProps}>
+    <Comp className={clsx(className)} {...restProps}>
       {children}
     </Comp>
   );

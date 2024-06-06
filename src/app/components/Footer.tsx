@@ -12,7 +12,7 @@ export default async function Footer() {
   const settings = await client.getSingle("settings");
 
   return (
-    <Bounded as="footer" className="container">
+    <Bounded as="footer" className="w-full container">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 border-t border-black">
         <div className="flex flex-col items-center sm:justify-between sm:items-start flex-wrap gap-9 pt-6">
           <Logo />

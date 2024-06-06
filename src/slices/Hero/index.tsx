@@ -9,6 +9,7 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 import Heading from "@/app/components/Heading/Heading";
+import Button from "@/app/components/Button";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -47,7 +48,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
     <Bounded
-      className="relative overflow-hidden mx-auto max-w-screen-2xl flex flex-col align-center justify-center items-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20 z-10"
+      className="relative w-full overflow-hidden mx-auto max-w-screen-2xl flex flex-col align-center justify-center items-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20 z-10"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -89,6 +90,18 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             field={slice.primary.sub_headeline}
             components={components}
           />
+        </div>
+
+        <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[540px] xs:max-w-[340px] mt-6 ">
+          <Button
+            field={slice.primary.button_link}
+            className="p-3.5 lg:p-4 px-10 lg:px-[30px]"
+          >
+            <>{slice.primary.button_label}</>
+          </Button>
+          <span className="text-[#A3A3A3] text-xs lg:text-sm mt-2">
+            <>{slice.primary.button_sub_text}</>
+          </span>
         </div>
 
         <PrismicNextImage
