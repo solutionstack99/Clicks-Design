@@ -3,7 +3,30 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 import Bounded from "@/app/components/Bounded/Bounded";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+  JSXMapSerializer,
+  PrismicRichText,
+  SliceComponentProps,
+} from "@prismicio/react";
+import Heading from "@/app/components/Heading/Heading";
+
+const components: JSXMapSerializer = {
+  heading1: ({ children }) => (
+    <Heading as="h1" size="3xl" className="text-center text-black pt-2.5 pb-7">
+      {children}
+    </Heading>
+  ),
+  heading6: ({ children }) => (
+    <Heading as="h6" size="xs" className="text-center text-black uppercase">
+      {children}
+    </Heading>
+  ),
+  paragraph: ({ children }) => (
+    <p className="text-sm leading-6 md:leading-7 w-full font-lato font-base text-black1 text-center max-w-md">
+      {children}
+    </p>
+  ),
+};
 
 const stars = {
   One: <One />,
@@ -22,15 +45,14 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
-  console.log(slice.primary.stars);
   return (
     <Bounded
-      className="flex flex-col items-center justify-center w-full h-screen bg-white"
+      className="relative overflow-hidden mx-auto max-w-screen-2xl flex flex-col align-center justify-center items-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20 z-10"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <>
-        <div className="flex flex-row items-center justify-center gap-2">
+        <div className="relative flex flex-row items-center justify-center gap-2">
           <ul className="flex flex-row items-center justify-center">
             {slice.primary.client_images.map((item, index) => {
               return (
@@ -54,8 +76,25 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             </p>
           </div>
         </div>
-        <PrismicRichText field={slice.primary.headeline} />
-        <PrismicNextImage field={slice.primary.background_image} />
+
+        <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[540px] xs:max-w-[340px]">
+          <PrismicRichText
+            field={slice.primary.headeline}
+            components={components}
+          />
+        </div>
+
+        <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[640px] xs:max-w-[340px]">
+          <PrismicRichText
+            field={slice.primary.sub_headeline}
+            components={components}
+          />
+        </div>
+
+        <PrismicNextImage
+          field={slice.primary.background_image}
+          className="absolute right-[50%] top-[50%] translate-x-[50%] translate-y-[-50%] w-[410px] h-[202px] object-cover object-center z-[-1]"
+        />
       </>
     </Bounded>
   );

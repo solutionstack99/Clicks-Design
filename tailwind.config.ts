@@ -17,6 +17,16 @@ const config = {
         "2xl": "1400px",
       },
     },
+    fontSize: {
+      xs: ["0.875rem", "1.5rem"],
+      base: ["1.25rem", "1.625rem"],
+      sm: ["1.125rem", "1.625rem"],
+      lg: ["1.25rem", "2.25rem"],
+      md: ["1.5rem", "2.25rem"],
+      xl: ["2.25rem", "2.75rem"],
+      "2xl": ["2.5rem", "3rem"],
+      "3xl": ["5rem", "2.75rem"],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
