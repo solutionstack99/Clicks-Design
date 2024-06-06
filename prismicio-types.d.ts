@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = CtaButtonSlice;
+type HomepageDocumentDataSlicesSlice = HeroSlice | CtaButtonSlice;
 
 /**
  * Content for Homepage documents
@@ -230,16 +230,6 @@ export type SettingsDocument<Lang extends string = string> =
  */
 export interface SocialIconsDocumentDataIconsItem {
   /**
-   * Icon field in *Social Icons → Icons*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: social_icons.icons[].icon
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  icon: prismic.ImageField<never>;
-
-  /**
    * Social Icons field in *Social Icons → Icons*
    *
    * - **Field Type**: Select
@@ -386,6 +376,120 @@ export type CtaButtonSlice = prismic.SharedSlice<
   CtaButtonSliceVariation
 >;
 
+/**
+ * Item in *Hero → Default → Primary → Client Images*
+ */
+export interface HeroSliceDefaultPrimaryClientImagesItem {
+  /**
+   * Client Image field in *Hero → Default → Primary → Client Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.client_images[].client_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  client_image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *Hero → Default → Primary → Stars*
+ */
+export interface HeroSliceDefaultPrimaryStarsItem {
+  /**
+   * Star field in *Hero → Default → Primary → Stars*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.stars[].star
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  star: prismic.SelectField<"One" | "Two" | "Three" | "Four" | "Five">;
+}
+
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Headeline field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headeline: prismic.RichTextField;
+
+  /**
+   * Sub Headeline field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.sub_headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_headeline: prismic.RichTextField;
+
+  /**
+   * Background Image field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Client Images field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.client_images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  client_images: prismic.GroupField<
+    Simplify<HeroSliceDefaultPrimaryClientImagesItem>
+  >;
+
+  /**
+   * Stars field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.stars[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  stars: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryStarsItem>>;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -412,6 +516,12 @@ declare module "@prismicio/client" {
       CtaButtonSliceDefaultPrimary,
       CtaButtonSliceVariation,
       CtaButtonSliceDefault,
+      HeroSlice,
+      HeroSliceDefaultPrimaryClientImagesItem,
+      HeroSliceDefaultPrimaryStarsItem,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
     };
   }
 }

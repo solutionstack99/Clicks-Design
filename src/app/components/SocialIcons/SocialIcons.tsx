@@ -1,5 +1,5 @@
 import { createClient } from "@/prismicio";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextLink } from "@prismicio/next";
 
 const icons = {
   x: <XIcon />,
@@ -19,7 +19,7 @@ export default async function SocialIcons() {
       >
         {item.data.icons.map((item, index) => {
           return (
-            <li key={item.icon.id} className="text-center md:text-left">
+            <li key={index} className="text-center md:text-left">
               <PrismicNextLink
                 key={index}
                 field={item.link}
