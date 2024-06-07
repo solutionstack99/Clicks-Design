@@ -1,13 +1,13 @@
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
-import Bounded from "@/app/components/Bounded/Bounded";
+import Bounded from "@/app/components/Bounded";
 import { Content } from "@prismicio/client";
 import {
   JSXMapSerializer,
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import Heading from "@/app/components/Heading/Heading";
+import Heading from "@/app/components/Heading";
 import Button from "@/app/components/Button";
 import Typing from "@/app/components/Typing";
 

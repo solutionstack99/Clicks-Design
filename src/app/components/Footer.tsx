@@ -2,9 +2,9 @@ import { PrismicNextLink } from "@prismicio/next";
 import { createClient } from "@/prismicio";
 import Link from "next/link";
 import Logo from "./Logo";
-import Bounded from "./Bounded/Bounded";
-import Social from "./SocialIcons/SocialIcons";
-import SocialIcons from "./SocialIcons/SocialIcons";
+import Bounded from "./Bounded";
+import Social from "./SocialIcons";
+import SocialIcons from "./SocialIcons";
 
 export default async function Footer() {
   const client = createClient();

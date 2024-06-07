@@ -3,7 +3,7 @@ import { createClient } from "@/prismicio";
 
 import Logo from "@/app/components/Logo";
 import Navbar from "./Navbar";
-import Bounded from "./Bounded/Bounded";
+import Bounded from "./Bounded";
 import Button from "./Button";
 
 export default async function Header() {
