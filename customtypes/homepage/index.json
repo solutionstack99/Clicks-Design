@@ -11,10 +11,10 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "hero": {
+            "recent_work": {
               "type": "SharedSlice"
             },
-            "cta_button": {
+            "hero": {
               "type": "SharedSlice"
             }
           }

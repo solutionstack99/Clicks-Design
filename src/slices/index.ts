@@ -3,6 +3,6 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  cta_button: dynamic(() => import("./CtaButton")),
   hero: dynamic(() => import("./Hero")),
+  recent_work: dynamic(() => import("./RecentWork")),
 };

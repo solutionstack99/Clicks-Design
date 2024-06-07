@@ -72,11 +72,7 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "cta_button": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },

@@ -100,9 +100,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           >
             <>{slice.primary.button_label}</>
           </Button>
-          <span className="text-[#A3A3A3] text-xs lg:text-sm mt-2">
+          <p className="text-light-grey text-xs font-lato lg:text-sm mt-2">
             <>{slice.primary.button_sub_text}</>
-          </span>
+          </p>
         </div>
 
         <PrismicNextImage

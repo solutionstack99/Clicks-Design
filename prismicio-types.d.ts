@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice | CtaButtonSlice;
+type HomepageDocumentDataSlicesSlice = RecentWorkSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -94,7 +94,7 @@ export interface SettingsDocumentDataNavigationItem {
   label: prismic.KeyTextField;
 }
 
-type SettingsDocumentDataSlicesSlice = CtaButtonSlice;
+type SettingsDocumentDataSlicesSlice = never;
 
 /**
  * Content for Settings documents
@@ -301,82 +301,6 @@ export type AllDocumentTypes =
   | SocialIconsDocument;
 
 /**
- * Primary content in *CtaButton → Default → Primary*
- */
-export interface CtaButtonSliceDefaultPrimary {
-  /**
-   * CTA Button Label field in *CtaButton → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cta_button.default.primary.cta_button_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  cta_button_label: prismic.KeyTextField;
-
-  /**
-   * CTA Button Link field in *CtaButton → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cta_button.default.primary.cta_button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  cta_button_link: prismic.LinkField;
-
-  /**
-   * Has calls booked text field in *CtaButton → Default → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: cta_button.default.primary.has_calls_booked_text
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  has_calls_booked_text: prismic.BooleanField;
-
-  /**
-   * Calls booked field in *CtaButton → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cta_button.default.primary.calls_booked
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  calls_booked: prismic.KeyTextField;
-}
-
-/**
- * Default variation for CtaButton Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CtaButtonSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<CtaButtonSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *CtaButton*
- */
-type CtaButtonSliceVariation = CtaButtonSliceDefault;
-
-/**
- * CtaButton Shared Slice
- *
- * - **API ID**: `cta_button`
- * - **Description**: CtaButton
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CtaButtonSlice = prismic.SharedSlice<
-  "cta_button",
-  CtaButtonSliceVariation
->;
-
-/**
  * Item in *Hero → Default → Primary → Client Images*
  */
 export interface HeroSliceDefaultPrimaryClientImagesItem {
@@ -520,6 +444,107 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Item in *RecentWork → Default → Primary → Works*
+ */
+export interface RecentWorkSliceDefaultPrimaryWorksItem {
+  /**
+   * Image field in *RecentWork → Default → Primary → Works*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_work.default.primary.works[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *RecentWork → Default → Primary → Works*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_work.default.primary.works[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *RecentWork → Default → Primary*
+ */
+export interface RecentWorkSliceDefaultPrimary {
+  /**
+   * Works field in *RecentWork → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_work.default.primary.works[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  works: prismic.GroupField<Simplify<RecentWorkSliceDefaultPrimaryWorksItem>>;
+
+  /**
+   * Show Primary Button field in *RecentWork → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: recent_work.default.primary.show_primary_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_primary_button: prismic.BooleanField;
+
+  /**
+   * Button Label field in *RecentWork → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_work.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *RecentWork → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_work.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for RecentWork Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RecentWorkSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RecentWorkSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RecentWork*
+ */
+type RecentWorkSliceVariation = RecentWorkSliceDefault;
+
+/**
+ * RecentWork Shared Slice
+ *
+ * - **API ID**: `recent_work`
+ * - **Description**: RecentWork
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RecentWorkSlice = prismic.SharedSlice<
+  "recent_work",
+  RecentWorkSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -542,16 +567,17 @@ declare module "@prismicio/client" {
       SocialIconsDocumentDataIconsItem,
       SocialIconsDocumentDataSlicesSlice,
       AllDocumentTypes,
-      CtaButtonSlice,
-      CtaButtonSliceDefaultPrimary,
-      CtaButtonSliceVariation,
-      CtaButtonSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryClientImagesItem,
       HeroSliceDefaultPrimaryStarsItem,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      RecentWorkSlice,
+      RecentWorkSliceDefaultPrimaryWorksItem,
+      RecentWorkSliceDefaultPrimary,
+      RecentWorkSliceVariation,
+      RecentWorkSliceDefault,
     };
   }
 }

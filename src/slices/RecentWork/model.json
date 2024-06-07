@@ -1,0 +1,68 @@
+{
+  "id": "recent_work",
+  "type": "SharedSlice",
+  "name": "RecentWork",
+  "description": "RecentWork",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "works": {
+          "type": "Group",
+          "config": {
+            "label": "Works",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        },
+        "show_primary_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Primary Button",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
