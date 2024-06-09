@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = RecentWorkSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | SectionColumnsSlice
+  | RecentWorkSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -545,6 +548,139 @@ export type RecentWorkSlice = prismic.SharedSlice<
   RecentWorkSliceVariation
 >;
 
+/**
+ * Item in *SectionColumns → Default → Primary → Columns*
+ */
+export interface SectionColumnsSliceDefaultPrimaryColumnsItem {
+  /**
+   * Icons field in *SectionColumns → Default → Primary → Columns*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.columns[].icons
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icons: prismic.SelectField<"1" | "2">;
+
+  /**
+   * Column Headeline field in *SectionColumns → Default → Primary → Columns*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.columns[].column_headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column_headeline: prismic.RichTextField;
+
+  /**
+   * Column Description field in *SectionColumns → Default → Primary → Columns*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.columns[].column_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column_description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *SectionColumns → Default → Primary*
+ */
+export interface SectionColumnsSliceDefaultPrimary {
+  /**
+   * Headeline field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headeline: prismic.TitleField;
+
+  /**
+   * Sub Headeline field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.sub_headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_headeline: prismic.RichTextField;
+
+  /**
+   * Columns field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.columns[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  columns: prismic.GroupField<
+    Simplify<SectionColumnsSliceDefaultPrimaryColumnsItem>
+  >;
+
+  /**
+   * Show Primary Button field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: section_columns.default.primary.show_primary_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_primary_button: prismic.BooleanField;
+
+  /**
+   * Button Label field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for SectionColumns Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SectionColumnsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SectionColumnsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SectionColumns*
+ */
+type SectionColumnsSliceVariation = SectionColumnsSliceDefault;
+
+/**
+ * SectionColumns Shared Slice
+ *
+ * - **API ID**: `section_columns`
+ * - **Description**: SectionColumns
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SectionColumnsSlice = prismic.SharedSlice<
+  "section_columns",
+  SectionColumnsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -578,6 +714,11 @@ declare module "@prismicio/client" {
       RecentWorkSliceDefaultPrimary,
       RecentWorkSliceVariation,
       RecentWorkSliceDefault,
+      SectionColumnsSlice,
+      SectionColumnsSliceDefaultPrimaryColumnsItem,
+      SectionColumnsSliceDefaultPrimary,
+      SectionColumnsSliceVariation,
+      SectionColumnsSliceDefault,
     };
   }
 }

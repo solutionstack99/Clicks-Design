@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className={lato.variable}>
         <Header />
 
-        <main className="container py-10">{children}</main>
+        <main className="py-10">{children}</main>
         <Footer />
       </body>
     </html>

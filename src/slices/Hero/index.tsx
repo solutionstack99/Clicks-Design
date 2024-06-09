@@ -13,7 +13,7 @@ import Typing from "@/app/components/Typing";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <Heading as="h1" size="3xl" className="text-center text-black pt-2.5 pb-7">
+    <Heading as="h1" size="3xl" className="text-center text-black pt-2.5 pb-5">
       {children}
     </Heading>
   ),
@@ -48,7 +48,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
     <Bounded
-      className="relative w-full overflow-hidden mx-auto max-w-screen-2xl flex flex-col align-center justify-center items-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20 z-10"
+      className="relative w-full overflow-hidden mx-auto max-w-screen-2xl flex flex-col align-center justify-center items-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20 z-10 container"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >

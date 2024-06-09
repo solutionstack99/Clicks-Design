@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 type HeadingProps = {
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
   size?: "xs" | "base" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
   className?: string;
   children: React.ReactNode;
@@ -17,16 +17,18 @@ export default function Heading({
   return (
     <Comp
       className={clsx(
-        "font-lato text-balance",
+        "font-lato",
         size === "3xl" &&
-          "text-2xl md:text-3xl w-full leading-10 md:leading-none",
-        size === "2xl" && "text-xl md:text-2xl w-full",
-        size === "xl" && "text-md md:text-xl w-full",
-        size === "md" && "text-md md:text-md w-full leading-7",
-        size === "lg" && "text-md md:text-lg w-full leading-9 md:leading-7",
-        size === "sm" && "text-sm md:text-sm w-full",
-        size === "base" && "text-base md:text-base w-full",
-        size === "xs" && "text-xs md:text-xs w-full",
+          "text-2xl md:text-3xl font-lato w-full leading-10 md:leading-none",
+        size === "2xl" && "text-xl md:text-2xl font-lato w-full",
+        size === "xl" && "text-md md:text-xl font-lato w-full",
+        size === "md" && "text-md md:text-md font-lato w-full leading-7",
+        size === "lg" &&
+          "text-md md:text-lg font-lato w-full leading-9 md:leading-7",
+        size === "sm" && "text-sm md:text-sm font-lato font-thin w-full",
+        size === "base" && "text-base md:text-base font-lato font-thin w-full",
+        size === "xs" &&
+          "text-xs md:text-xs leading-6 md:leading-7 font-lato font-thin w-full",
         className
       )}
     >

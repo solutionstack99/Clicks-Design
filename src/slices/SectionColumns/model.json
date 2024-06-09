@@ -1,0 +1,99 @@
+{
+  "id": "section_columns",
+  "type": "SharedSlice",
+  "name": "SectionColumns",
+  "description": "SectionColumns",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "headeline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headeline",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading2"
+          }
+        },
+        "sub_headeline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sub Headeline",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "columns": {
+          "type": "Group",
+          "config": {
+            "label": "Columns",
+            "repeat": true,
+            "fields": {
+              "icons": {
+                "type": "Select",
+                "config": {
+                  "label": "Icons",
+                  "placeholder": "",
+                  "options": [
+                    "1",
+                    "2"
+                  ]
+                }
+              },
+              "column_headeline": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Column Headeline",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "heading3"
+                }
+              },
+              "column_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Column Description",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "paragraph,strong,em"
+                }
+              }
+            }
+          }
+        },
+        "show_primary_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Primary Button",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

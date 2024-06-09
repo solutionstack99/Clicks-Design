@@ -1,0 +1,93 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"headeline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Central"
+						}
+					}
+				]
+			},
+			"sub_headeline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Qui sint officia aliqua ad in. Aute irure amet do elit aliqua dolor occaecat sunt consectetur cupidatat tempor magna non proident elit. Tempor aliquip pariatur eiusmod nulla officia eu laborum."
+						}
+					}
+				]
+			},
+			"columns": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icons",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "2",
+									"type": "Select"
+								}
+							],
+							[
+								"column_headeline",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Success"
+											}
+										}
+									]
+								}
+							],
+							[
+								"column_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In laborum duis officia. Cillum laboris minim duis reprehenderit veniam dolor sunt fugiat eu aliquip adipisicing eiusmod id occaecat in."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"show_primary_button": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "recognize",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			}
+		},
+		"items": []
+	}
+]
