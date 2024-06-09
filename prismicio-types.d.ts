@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | CaseStudiesSlice
   | SectionColumnsSlice
   | RecentWorkSlice
   | HeroSlice;
@@ -302,6 +303,78 @@ export type AllDocumentTypes =
   | HomepageDocument
   | SettingsDocument
   | SocialIconsDocument;
+
+/**
+ * Item in *CaseStudies → Default → Primary → Images*
+ */
+export interface CaseStudiesSliceDefaultPrimaryImagesItem {
+  /**
+   * Image field in *CaseStudies → Default → Primary → Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *CaseStudies → Default → Primary*
+ */
+export interface CaseStudiesSliceDefaultPrimary {
+  /**
+   * Headeline field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headeline: prismic.RichTextField;
+
+  /**
+   * Images field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<
+    Simplify<CaseStudiesSliceDefaultPrimaryImagesItem>
+  >;
+}
+
+/**
+ * Default variation for CaseStudies Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CaseStudiesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CaseStudiesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CaseStudies*
+ */
+type CaseStudiesSliceVariation = CaseStudiesSliceDefault;
+
+/**
+ * CaseStudies Shared Slice
+ *
+ * - **API ID**: `case_studies`
+ * - **Description**: CaseStudies
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CaseStudiesSlice = prismic.SharedSlice<
+  "case_studies",
+  CaseStudiesSliceVariation
+>;
 
 /**
  * Item in *Hero → Default → Primary → Client Images*
@@ -703,6 +776,11 @@ declare module "@prismicio/client" {
       SocialIconsDocumentDataIconsItem,
       SocialIconsDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CaseStudiesSlice,
+      CaseStudiesSliceDefaultPrimaryImagesItem,
+      CaseStudiesSliceDefaultPrimary,
+      CaseStudiesSliceVariation,
+      CaseStudiesSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryClientImagesItem,
       HeroSliceDefaultPrimaryStarsItem,
