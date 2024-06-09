@@ -91,6 +91,17 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "",
+            "options": [
+              "wheat",
+              "white"
+            ]
+          }
         }
       },
       "items": {}

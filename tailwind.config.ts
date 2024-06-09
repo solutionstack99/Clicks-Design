@@ -37,6 +37,8 @@ const config = {
         primary: "hsl(19 100% 55% / 1)",
         secondary: "hsl(45 3 23 / 1)",
         "light-grey": "hsl(0deg 0% 63.92%)",
+        "background-color": "hsl(53 50% 93% 1))",
+        wheat: "hsl(53 50% 93% / 1)",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

@@ -9,6 +9,19 @@ import Heading from "@/app/components/Heading";
 import { PrismicNextLink } from "@prismicio/next";
 import Button from "@/app/components/Button";
 
+// const backgroundColor = {
+//   Wheat: "bg-wheat",
+//   White: "bg-white",
+// };
+
+// const bgColor = backgroundColor.map((color, index) => {
+//   return (
+//     <div key={index} className={color}>
+//       {color}
+//     </div>
+//   )
+// })
+
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
     <Heading
@@ -46,9 +59,10 @@ const SectionColumns = ({ slice }: SectionColumnsProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className={`bg-${slice.primary.background_color === "white" ? "white" : "wheat"}`}
     >
       <div className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20">
-        <div className="pt-16 lg:mt-[4rem] flex flex-col justify-between text-center items-center">
+        <div className="pt-16 flex flex-col justify-between text-center items-center">
           <PrismicRichText
             field={slice.primary.headeline}
             components={components}
