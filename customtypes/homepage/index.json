@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "what_we_do": {
+              "type": "SharedSlice"
+            },
             "case_studies": {
               "type": "SharedSlice"
             },

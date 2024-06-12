@@ -89,7 +89,12 @@
 			},
 			"background_color": {
 				"__TYPE__": "FieldContent",
-				"value": "white",
+				"value": "grey",
+				"type": "Select"
+			},
+			"border_radius": {
+				"__TYPE__": "FieldContent",
+				"value": "bottom right bottom left",
 				"type": "Select"
 			}
 		},

@@ -1,0 +1,65 @@
+{
+  "id": "what_we_do",
+  "type": "SharedSlice",
+  "name": "WhatWeDo",
+  "description": "WhatWeDo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "headeline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headeline",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading2,strong"
+          }
+        },
+        "sub_headeline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sub Headeline",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,strong"
+          }
+        },
+        "services": {
+          "type": "Group",
+          "config": {
+            "label": "Services",
+            "repeat": true,
+            "fields": {
+              "headeline": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Service Headeline",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "heading3,strong"
+                }
+              },
+              "logo": {
+                "type": "Link",
+                "config": {
+                  "label": "Logo",
+                  "select": "document",
+                  "customtypes": [
+                    "service_logos"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

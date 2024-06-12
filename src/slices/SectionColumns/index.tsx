@@ -6,21 +6,7 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 import Heading from "@/app/components/Heading";
-import { PrismicNextLink } from "@prismicio/next";
 import Button from "@/app/components/Button";
-
-// const backgroundColor = {
-//   Wheat: "bg-wheat",
-//   White: "bg-white",
-// };
-
-// const bgColor = backgroundColor.map((color, index) => {
-//   return (
-//     <div key={index} className={color}>
-//       {color}
-//     </div>
-//   )
-// })
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -59,9 +45,11 @@ const SectionColumns = ({ slice }: SectionColumnsProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`bg-${slice.primary.background_color === "white" ? "white" : "wheat"}`}
+      className="px-5 lg:px-8 2xl:px-20"
     >
-      <div className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20">
+      <div
+        className={`bg-${slice.primary.background_color === "white" ? "black" : "grey-900/50"} ${slice.primary.border_radius === "top right top left" ? "rounded-tr-[45px] rounded-tl-[45px]" : "rounded-br-[45px] rounded-bl-[45px]"} container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20`}
+      >
         <div className="pt-16 flex flex-col justify-between text-center items-center">
           <PrismicRichText
             field={slice.primary.headeline}

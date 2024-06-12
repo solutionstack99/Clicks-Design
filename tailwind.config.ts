@@ -7,6 +7,9 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
+    "./@/**/*.{ts,tsx}",
+    // Map over the labels and add them to the safelist
   ],
   prefix: "",
   theme: {
@@ -36,9 +39,10 @@ const config = {
         foreground: "hsl(var(--foreground))",
         primary: "hsl(19 100% 55% / 1)",
         secondary: "hsl(45 3 23 / 1)",
-        "light-grey": "hsl(0deg 0% 63.92%)",
-        "background-color": "hsl(53 50% 93% 1))",
-        wheat: "hsl(53 50% 93% / 1)",
+        grey: {
+          900: "#E9E9E9",
+        },
+        "background-color": "hsl(53 50% 93% 1)",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

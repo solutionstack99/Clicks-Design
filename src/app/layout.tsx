@@ -4,6 +4,7 @@ import { Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer"; // Change the import statement to use lowercase "footer"
+import Providers from "@/providers";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -33,12 +34,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={lato.variable}>
-        <Header />
+        <Providers>
+          <Header />
 
-        <main className="py-10">{children}</main>
-        <Footer />
+          <main className="py-10">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | WhatWeDoSlice
   | CaseStudiesSlice
   | SectionColumnsSlice
   | RecentWorkSlice
@@ -70,6 +71,55 @@ export type HomepageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<HomepageDocumentData>,
     "homepage",
+    Lang
+  >;
+
+/**
+ * Item in *Service Logos → Service Logos*
+ */
+export interface ServiceLogosDocumentDataServiceLogosItem {
+  /**
+   * Logo field in *Service Logos → Service Logos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_logos.service_logos[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Content for Service Logos documents
+ */
+interface ServiceLogosDocumentData {
+  /**
+   * Service Logos field in *Service Logos*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_logos.service_logos[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  service_logos: prismic.GroupField<
+    Simplify<ServiceLogosDocumentDataServiceLogosItem>
+  >;
+}
+
+/**
+ * Service Logos document from Prismic
+ *
+ * - **API ID**: `service_logos`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServiceLogosDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ServiceLogosDocumentData>,
+    "service_logos",
     Lang
   >;
 
@@ -301,6 +351,7 @@ export type SocialIconsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | HomepageDocument
+  | ServiceLogosDocument
   | SettingsDocument
   | SocialIconsDocument;
 
@@ -728,10 +779,25 @@ export interface SectionColumnsSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: grey
    * - **API ID Path**: section_columns.default.primary.background_color
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_color: prismic.SelectField<"wheat" | "white">;
+  background_color: prismic.SelectField<"grey" | "black" | "white", "filled">;
+
+  /**
+   * Border Radius field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: top right top left
+   * - **API ID Path**: section_columns.default.primary.border_radius
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  border_radius: prismic.SelectField<
+    "top right top left" | "bottom right bottom left",
+    "filled"
+  >;
 }
 
 /**
@@ -764,6 +830,98 @@ export type SectionColumnsSlice = prismic.SharedSlice<
   SectionColumnsSliceVariation
 >;
 
+/**
+ * Item in *WhatWeDo → Default → Primary → Services*
+ */
+export interface WhatWeDoSliceDefaultPrimaryServicesItem {
+  /**
+   * Service Headeline field in *WhatWeDo → Default → Primary → Services*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.services[].headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headeline: prismic.RichTextField;
+
+  /**
+   * Logo field in *WhatWeDo → Default → Primary → Services*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.services[].logo
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  logo: prismic.ContentRelationshipField<"service_logos">;
+}
+
+/**
+ * Primary content in *WhatWeDo → Default → Primary*
+ */
+export interface WhatWeDoSliceDefaultPrimary {
+  /**
+   * Headeline field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headeline: prismic.RichTextField;
+
+  /**
+   * Sub Headeline field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.sub_headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_headeline: prismic.RichTextField;
+
+  /**
+   * Services field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.services[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  services: prismic.GroupField<
+    Simplify<WhatWeDoSliceDefaultPrimaryServicesItem>
+  >;
+}
+
+/**
+ * Default variation for WhatWeDo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhatWeDoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WhatWeDoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WhatWeDo*
+ */
+type WhatWeDoSliceVariation = WhatWeDoSliceDefault;
+
+/**
+ * WhatWeDo Shared Slice
+ *
+ * - **API ID**: `what_we_do`
+ * - **Description**: WhatWeDo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhatWeDoSlice = prismic.SharedSlice<
+  "what_we_do",
+  WhatWeDoSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -777,6 +935,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      ServiceLogosDocument,
+      ServiceLogosDocumentData,
+      ServiceLogosDocumentDataServiceLogosItem,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
@@ -807,6 +968,11 @@ declare module "@prismicio/client" {
       SectionColumnsSliceDefaultPrimary,
       SectionColumnsSliceVariation,
       SectionColumnsSliceDefault,
+      WhatWeDoSlice,
+      WhatWeDoSliceDefaultPrimaryServicesItem,
+      WhatWeDoSliceDefaultPrimary,
+      WhatWeDoSliceVariation,
+      WhatWeDoSliceDefault,
     };
   }
 }

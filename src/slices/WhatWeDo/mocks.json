@@ -1,0 +1,65 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"headeline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Birthday"
+						}
+					}
+				]
+			},
+			"sub_headeline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim officia voluptate dolore est ad eiusmod fugiat cupidatat in ut. Velit aliquip cillum id do irure mollit ut pariatur reprehenderit. Ea et eu tempor laborum in et culpa exercitation magna sit duis in in."
+						}
+					}
+				]
+			},
+			"services": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"headeline",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Refused"
+											}
+										}
+									]
+								}
+							],
+							[
+								"logo",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
