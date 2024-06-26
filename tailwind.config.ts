@@ -41,6 +41,10 @@ const config = {
         secondary: "hsl(45 3 23 / 1)",
         grey: {
           900: "#E9E9E9",
+          800: "#F0F0F0",
+          700: "#F7F7F7",
+          600: "#FAFAFA",
+          500: "#9C9C9C",
         },
         "background-color": "hsl(53 50% 93% 1)",
         destructive: {

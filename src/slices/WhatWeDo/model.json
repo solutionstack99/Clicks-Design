@@ -36,26 +36,41 @@
             "label": "Services",
             "repeat": true,
             "fields": {
-              "headeline": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Service Headeline",
-                  "placeholder": "",
-                  "allowTargetBlank": false,
-                  "multi": "heading3,strong"
-                }
-              },
-              "logo": {
+              "services": {
                 "type": "Link",
                 "config": {
-                  "label": "Logo",
+                  "label": "Services",
                   "select": "document",
                   "customtypes": [
-                    "service_logos"
+                    "services"
                   ]
                 }
               }
             }
+          }
+        },
+        "show_primary_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Primary Button",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
           }
         }
       },

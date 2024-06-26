@@ -45,12 +45,12 @@ const SectionColumns = ({ slice }: SectionColumnsProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="px-5 lg:px-8 2xl:px-20"
+      className="px-5 pt-16 lg:px-8 2xl:px-20"
     >
       <div
         className={`bg-${slice.primary.background_color === "white" ? "black" : "grey-900/50"} ${slice.primary.border_radius === "top right top left" ? "rounded-tr-[45px] rounded-tl-[45px]" : "rounded-br-[45px] rounded-bl-[45px]"} container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20`}
       >
-        <div className="pt-16 flex flex-col justify-between text-center items-center">
+        <div className="flex flex-col justify-between text-center items-center">
           <PrismicRichText
             field={slice.primary.headeline}
             components={components}
@@ -78,16 +78,18 @@ const SectionColumns = ({ slice }: SectionColumnsProps): JSX.Element => {
                     field={item.column_description}
                     components={components}
                   />
-
-                  {slice.primary.show_primary_button ? (
-                    <Button field={slice.primary.button_link}>
-                      <>{slice.primary.button_label}</>
-                    </Button>
-                  ) : null}
                 </div>
               );
             })}
           </>
+        </div>
+
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mt-8">
+          {slice.primary.show_primary_button ? (
+            <Button field={slice.primary.button_link}>
+              <>{slice.primary.button_label}</>
+            </Button>
+          ) : null}
         </div>
       </div>
     </Bounded>

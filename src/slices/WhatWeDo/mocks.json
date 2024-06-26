@@ -32,21 +32,7 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"headeline",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "heading3",
-											"content": {
-												"text": "Refused"
-											}
-										}
-									]
-								}
-							],
-							[
-								"logo",
+								"services",
 								{
 									"__TYPE__": "LinkContent",
 									"value": {
@@ -58,6 +44,22 @@
 						]
 					}
 				]
+			},
+			"show_primary_button": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "electricity",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
 			}
 		},
 		"items": []

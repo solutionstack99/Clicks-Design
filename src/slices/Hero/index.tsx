@@ -100,7 +100,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           >
             <>{slice.primary.button_label}</>
           </Button>
-          <p className="text-light-grey text-xs font-lato lg:text-sm mt-2">
+          <p className="text-grey-500 text-xs font-light font-lato lg:text-sm mt-2">
             <>{slice.primary.button_sub_text}</>
           </p>
         </div>

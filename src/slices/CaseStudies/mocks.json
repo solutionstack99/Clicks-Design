@@ -23,7 +23,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
@@ -41,12 +40,36 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							]
 						]
 					}
 				]
+			},
+			"show_primary_button": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "mine",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"button_sub_text": {
+				"__TYPE__": "FieldContent",
+				"value": "frame",
+				"type": "Text"
 			}
 		},
 		"items": []

@@ -6,6 +6,7 @@ import {
 } from "@prismicio/react";
 import Heading from "@/app/components/Heading";
 import Bounded from "@/app/components/Bounded";
+import Button from "@/app/components/Button";
 import { PrismicNextImage } from "@prismicio/next";
 
 const components: JSXMapSerializer = {
@@ -34,7 +35,7 @@ const CaseStudies = ({ slice }: CaseStudiesProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20"
+      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 lg:pb-5 pt-16 px-5 lg:px-8 2xl:px-20"
     >
       <div className="w-full lg:max-w-4xl mx-auto">
         <PrismicRichText
@@ -51,6 +52,16 @@ const CaseStudies = ({ slice }: CaseStudiesProps): JSX.Element => {
             </div>
           );
         })}
+        <div className="flex flex-col justify-center items-center mt-8">
+          {slice.primary.show_primary_button ? (
+            <Button field={slice.primary.button_link}>
+              <>{slice.primary.button_label}</>
+            </Button>
+          ) : null}
+          <p className="text-grey-500 text-xs font-light font-lato lg:text-sm mt-2">
+            <>{slice.primary.button_sub_text}</>
+          </p>
+        </div>
       </>
     </Bounded>
   );

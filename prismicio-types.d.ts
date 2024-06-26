@@ -75,51 +75,60 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 /**
- * Item in *Service Logos → Service Logos*
+ * Item in *Services → Logo*
  */
-export interface ServiceLogosDocumentDataServiceLogosItem {
+export interface ServicesDocumentDataLogoItem {
   /**
-   * Logo field in *Service Logos → Service Logos*
+   * Logo field in *Services → Logo*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: service_logos.service_logos[].logo
+   * - **API ID Path**: services.logo[].logo
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo: prismic.ImageField<never>;
 }
 
 /**
- * Content for Service Logos documents
+ * Content for Services documents
  */
-interface ServiceLogosDocumentData {
+interface ServicesDocumentData {
   /**
-   * Service Logos field in *Service Logos*
+   * Headeline field in *Services*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.headeline
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headeline: prismic.TitleField;
+
+  /**
+   * Logo field in *Services*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: service_logos.service_logos[]
+   * - **API ID Path**: services.logo[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  service_logos: prismic.GroupField<
-    Simplify<ServiceLogosDocumentDataServiceLogosItem>
-  >;
+  logo: prismic.GroupField<Simplify<ServicesDocumentDataLogoItem>>;
 }
 
 /**
- * Service Logos document from Prismic
+ * Services document from Prismic
  *
- * - **API ID**: `service_logos`
- * - **Repeatable**: `false`
+ * - **API ID**: `services`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type ServiceLogosDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<ServiceLogosDocumentData>,
-    "service_logos",
+export type ServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ServicesDocumentData>,
+    "services",
     Lang
   >;
 
@@ -351,7 +360,7 @@ export type SocialIconsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | HomepageDocument
-  | ServiceLogosDocument
+  | ServicesDocument
   | SettingsDocument
   | SocialIconsDocument;
 
@@ -395,6 +404,47 @@ export interface CaseStudiesSliceDefaultPrimary {
   images: prismic.GroupField<
     Simplify<CaseStudiesSliceDefaultPrimaryImagesItem>
   >;
+
+  /**
+   * Show Primary Button field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: case_studies.default.primary.show_primary_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_primary_button: prismic.BooleanField;
+
+  /**
+   * Button Label field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Button Sub Text field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.button_sub_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_sub_text: prismic.KeyTextField;
 }
 
 /**
@@ -835,24 +885,14 @@ export type SectionColumnsSlice = prismic.SharedSlice<
  */
 export interface WhatWeDoSliceDefaultPrimaryServicesItem {
   /**
-   * Service Headeline field in *WhatWeDo → Default → Primary → Services*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: what_we_do.default.primary.services[].headeline
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  headeline: prismic.RichTextField;
-
-  /**
-   * Logo field in *WhatWeDo → Default → Primary → Services*
+   * Services field in *WhatWeDo → Default → Primary → Services*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: what_we_do.default.primary.services[].logo
+   * - **API ID Path**: what_we_do.default.primary.services[].services
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  logo: prismic.ContentRelationshipField<"service_logos">;
+  services: prismic.ContentRelationshipField<"services">;
 }
 
 /**
@@ -890,6 +930,37 @@ export interface WhatWeDoSliceDefaultPrimary {
   services: prismic.GroupField<
     Simplify<WhatWeDoSliceDefaultPrimaryServicesItem>
   >;
+
+  /**
+   * Show Primary Button field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: what_we_do.default.primary.show_primary_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_primary_button: prismic.BooleanField;
+
+  /**
+   * Button Label field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
 }
 
 /**
@@ -935,9 +1006,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
-      ServiceLogosDocument,
-      ServiceLogosDocumentData,
-      ServiceLogosDocumentDataServiceLogosItem,
+      ServicesDocument,
+      ServicesDocumentData,
+      ServicesDocumentDataLogoItem,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
