@@ -20,8 +20,13 @@ const config = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      lato: ["Lato", "sans-serif"],
+    },
     fontSize: {
+      xxs: ["0.7rem", "1rem"],
       xs: ["0.875rem", "1.5rem"],
+      s: ["1rem", "1.25rem"],
       base: ["1.2rem", "1.625rem"],
       sm: ["1.125rem", "1.625rem"],
       lg: ["1.25rem", "2.25rem"],
@@ -70,7 +75,9 @@ const config = {
       },
       backgroundImage: {
         "gradient-linear":
-          "linear-gradient(360deg,  rgb(255 78 0), rgb(255 133 79))",
+          "linear-gradient(360deg, rgb(255 78 0), rgb(255 133 79))",
+        "gradient-linear-grey":
+          "linear-gradient(to top, rgb(233 233 233 / 10%), rgb(233 233 233 /20%))",
       },
       boxShadow: {
         "1xl": "0 2px 4px 2px rgba(0, 0, 0, 0.2)",

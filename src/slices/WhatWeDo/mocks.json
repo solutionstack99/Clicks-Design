@@ -60,6 +60,74 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"section_label": {
+				"__TYPE__": "FieldContent",
+				"value": "quiet",
+				"type": "Text"
+			},
+			"show_it_works_headeline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Interior"
+						}
+					}
+				]
+			},
+			"features": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"number",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Quis do velit nostrud anim tempor sunt excepteur veniam occaecat. Anim fugiat reprehenderit ullamco laboris culpa occaecat enim ea ut laborum ullamco velit. Exercitation pariatur magna culpa amet ea nostrud laboris labore fugiat minim laborum laboris."
+											}
+										}
+									]
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Beyond"
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ut ullamco ea laboris nulla exercitation nostrud laboris labore id officia eu in in est. Commodo excepteur occaecat nulla do reprehenderit voluptate id labore excepteur do proident sit. Lorem est commodo enim excepteur nostrud."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []

@@ -13,13 +13,13 @@ const components: JSXMapSerializer = {
     <Heading
       as="h2"
       size="2xl"
-      className="text-center font-bold text-black pt-2.5 pb-7"
+      className="text-center font-semibold text-black pt-2.5 pb-7"
     >
       {children}
     </Heading>
   ),
   heading3: ({ children }) => (
-    <Heading as="h3" size="md" className="text-center text-black font-bold">
+    <Heading as="h3" size="md" className="text-center text-black font-semibold">
       {children}
     </Heading>
   ),
@@ -45,7 +45,7 @@ const SectionColumns = ({ slice }: SectionColumnsProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="px-5 pt-16 lg:px-8 2xl:px-20"
+      className={`${slice.primary.top_padding ? "pt-16" : ""} px-5 lg:px-8 2xl:px-20`}
     >
       <div
         className={`bg-${slice.primary.background_color === "white" ? "black" : "grey-900/50"} ${slice.primary.border_radius === "top right top left" ? "rounded-tr-[45px] rounded-tl-[45px]" : "rounded-br-[45px] rounded-bl-[45px]"} container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20`}

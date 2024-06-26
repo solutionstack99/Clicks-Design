@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "top_padding": {
+          "type": "Boolean",
+          "config": {
+            "label": "Top Padding",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
         "headeline": {
           "type": "StructuredText",
           "config": {

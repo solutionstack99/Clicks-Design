@@ -762,6 +762,17 @@ export interface SectionColumnsSliceDefaultPrimaryColumnsItem {
  */
 export interface SectionColumnsSliceDefaultPrimary {
   /**
+   * Top Padding field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: section_columns.default.primary.top_padding
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  top_padding: prismic.BooleanField;
+
+  /**
    * Headeline field in *SectionColumns → Default → Primary*
    *
    * - **Field Type**: Title
@@ -896,6 +907,41 @@ export interface WhatWeDoSliceDefaultPrimaryServicesItem {
 }
 
 /**
+ * Item in *WhatWeDo → Default → Primary → Features*
+ */
+export interface WhatWeDoSliceDefaultPrimaryFeaturesItem {
+  /**
+   * Number field in *WhatWeDo → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.features[].number
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  number: prismic.RichTextField;
+
+  /**
+   * Title field in *WhatWeDo → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.features[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *WhatWeDo → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.features[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
  * Primary content in *WhatWeDo → Default → Primary*
  */
 export interface WhatWeDoSliceDefaultPrimary {
@@ -961,6 +1007,38 @@ export interface WhatWeDoSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField;
+
+  /**
+   * Section Label field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.section_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_label: prismic.KeyTextField;
+
+  /**
+   * How It Works Headeline field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.show_it_works_headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  show_it_works_headeline: prismic.RichTextField;
+
+  /**
+   * Features field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.features[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  features: prismic.GroupField<
+    Simplify<WhatWeDoSliceDefaultPrimaryFeaturesItem>
+  >;
 }
 
 /**
@@ -1041,6 +1119,7 @@ declare module "@prismicio/client" {
       SectionColumnsSliceDefault,
       WhatWeDoSlice,
       WhatWeDoSliceDefaultPrimaryServicesItem,
+      WhatWeDoSliceDefaultPrimaryFeaturesItem,
       WhatWeDoSliceDefaultPrimary,
       WhatWeDoSliceVariation,
       WhatWeDoSliceDefault,

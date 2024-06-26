@@ -14,7 +14,7 @@ const components: JSXMapSerializer = {
     <Heading
       as="h2"
       size="2xl"
-      className="text-center font-bold text-black pt-2.5 pb-7"
+      className="text-center font-semibold text-black pt-2.5 pb-7"
     >
       {children}
     </Heading>

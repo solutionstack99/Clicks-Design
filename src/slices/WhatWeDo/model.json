@@ -72,6 +72,58 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "section_label": {
+          "type": "Text",
+          "config": {
+            "label": "Section Label",
+            "placeholder": ""
+          }
+        },
+        "show_it_works_headeline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "How It Works Headeline",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading2,strong"
+          }
+        },
+        "features": {
+          "type": "Group",
+          "config": {
+            "label": "Features",
+            "repeat": true,
+            "fields": {
+              "number": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Number",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "single": "paragraph,heading3,strong,heading2"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "heading3,heading4"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "paragraph,strong,em"
+                }
+              }
+            }
+          }
         }
       },
       "items": {}
