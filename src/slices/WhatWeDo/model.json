@@ -124,6 +124,41 @@
               }
             }
           }
+        },
+        "process_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Process Title",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "process": {
+          "type": "Group",
+          "config": {
+            "label": "Process",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "paragraph"
+                }
+              },
+              "task_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Task Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
         }
       },
       "items": {}

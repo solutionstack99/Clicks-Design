@@ -128,6 +128,67 @@
 						]
 					}
 				]
+			},
+			"process": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"task_image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+										"width": 3500,
+										"height": 2338
+									},
+									"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+									"width": 3500,
+									"height": 2338,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Laboris consectetur irure sint exercitation nulla deserunt labore minim. Laborum deserunt incididunt adipisicing occaecat elit culpa et id commodo enim aute nisi velit id. Ipsum proident commodo ad irure irure."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"process_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Exercitation non dolor mollit fugiat Lorem. Est fugiat eiusmod ex ullamco exercitation eiusmod fugiat dolore."
+						}
+					}
+				]
 			}
 		},
 		"items": []

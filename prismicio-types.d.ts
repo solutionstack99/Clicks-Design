@@ -942,6 +942,31 @@ export interface WhatWeDoSliceDefaultPrimaryFeaturesItem {
 }
 
 /**
+ * Item in *WhatWeDo → Default → Primary → Process*
+ */
+export interface WhatWeDoSliceDefaultPrimaryProcessItem {
+  /**
+   * Title field in *WhatWeDo → Default → Primary → Process*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.process[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Task Image field in *WhatWeDo → Default → Primary → Process*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.process[].task_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  task_image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *WhatWeDo → Default → Primary*
  */
 export interface WhatWeDoSliceDefaultPrimary {
@@ -1039,6 +1064,26 @@ export interface WhatWeDoSliceDefaultPrimary {
   features: prismic.GroupField<
     Simplify<WhatWeDoSliceDefaultPrimaryFeaturesItem>
   >;
+
+  /**
+   * Process Title field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.process_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  process_title: prismic.RichTextField;
+
+  /**
+   * Process field in *WhatWeDo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_we_do.default.primary.process[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  process: prismic.GroupField<Simplify<WhatWeDoSliceDefaultPrimaryProcessItem>>;
 }
 
 /**
@@ -1120,6 +1165,7 @@ declare module "@prismicio/client" {
       WhatWeDoSlice,
       WhatWeDoSliceDefaultPrimaryServicesItem,
       WhatWeDoSliceDefaultPrimaryFeaturesItem,
+      WhatWeDoSliceDefaultPrimaryProcessItem,
       WhatWeDoSliceDefaultPrimary,
       WhatWeDoSliceVariation,
       WhatWeDoSliceDefault,

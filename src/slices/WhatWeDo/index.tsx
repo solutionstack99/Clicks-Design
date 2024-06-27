@@ -92,6 +92,18 @@ const featureNumberComponents: JSXMapSerializer = {
   ),
 };
 
+const processComponents: JSXMapSerializer = {
+  paragraph: ({ children }) => (
+    <Heading
+      as="p"
+      size="s"
+      className="relative text-white text-center font-semibold"
+    >
+      {children}
+    </Heading>
+  ),
+};
+
 /**
  * Props for `WhatWeDo`.
  */
@@ -123,7 +135,7 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
       data-slice-variation={slice.variation}
       className="pb-10 pt-16 px-5 lg:px-8 2xl:px-20"
     >
-      <div className="container mx-auto max-w-screen-2xl bg-gradient-linear-grey bg-grey-900 rounded-[45px] pb-10 lg:pb-20">
+      <div className="container mx-auto max-w-screen-2xl pb-10 lg:pb-20">
         <div className="flex flex-col justify-between text-center items-center">
           <PrismicRichText
             field={slice.primary.headeline}
@@ -199,7 +211,7 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
                     key={index}
                     className="flex flex-col justify-between text-center items-center flex-wrap mt-20 sm:min-h-[250px] lg:max-h-[250px] col-span-1 max-w-[500px] lg:max-w-max-[500px] w-full bg-grey-900/50 border-white border-[5px] rounded-[24px] p-7 gap-5"
                   >
-                    <div className="flex flex-col justify-center items-center bg-white py-10 px-5 rounded-full h-[94px] w-[94px] m-[-80px]">
+                    <div className="flex flex-col justify-center items-center bg-white py-10 px-5 rounded-full  border-[1px]  border-grey-500/10 h-[94px] w-[94px] m-[-80px]">
                       <PrismicRichText
                         field={item.number}
                         components={featureNumberComponents}
@@ -221,6 +233,31 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
               })}
             </>
           </div>
+
+          <div className="pt-16 flex flex-col justify-between text-center items-center">
+            <PrismicRichText
+              field={slice.primary.process_title}
+              components={components}
+            />
+          </div>
+          <ul className="text-center grid grid-cols-1 lg:grid-cols-3 p-10 gap-10 lg:gap-9">
+            {slice.primary.process.map((item, index) => {
+              return (
+                <li
+                  key={index}
+                  className="flex flex-col justify-flex-start items-center gap-10 [&:nth-child(1)&>p]:text-black [&:nth-child(2)>p]:text-blue-900 [:nth-child(3)&>p]:text-green-900 [&:nth-child(1)&>span]:bg-black [&:nth-child(2)>span]:bg-blue-900 [:nth-child(3)&>span]:bg-green-900"
+                >
+                  <span className="relative w-fit h-5 bg-black flex flex-row justify-center items-center item-center rounded-full px-4 py-4">
+                    <PrismicRichText
+                      field={item.title}
+                      components={processComponents}
+                    />
+                  </span>
+                  <PrismicNextImage field={item.task_image} />
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </Bounded>
