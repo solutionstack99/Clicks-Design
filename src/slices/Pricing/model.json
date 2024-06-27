@@ -1,0 +1,114 @@
+{
+  "id": "pricing",
+  "type": "SharedSlice",
+  "name": "Pricing",
+  "description": "Pricing",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "section_label": {
+          "type": "Text",
+          "config": {
+            "label": "Section Label",
+            "placeholder": ""
+          }
+        },
+        "section_headeline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Headeline",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading2"
+          }
+        },
+        "pricing_tables": {
+          "type": "Group",
+          "config": {
+            "label": "Pricing Tables",
+            "repeat": true,
+            "fields": {
+              "plan": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Plan",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "single": "paragraph"
+                }
+              },
+              "has_ribbon": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Has Ribbon",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
+              "ribbon_label": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Ribbon Label",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "single": "paragraph"
+                }
+              },
+              "benefit_sub_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit Sub Description",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "paragraph"
+                }
+              },
+              "benefit_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit Description",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "paragraph,strong,em"
+                }
+              },
+              "benefit_list": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit List",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "paragraph,strong,o-list-item,list-item,em"
+                }
+              },
+              "cta_button_label": {
+                "type": "Link",
+                "config": {
+                  "label": "CTA Button Label",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "cta_button_link": {
+                "type": "Link",
+                "config": {
+                  "label": "CTA Button Link",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

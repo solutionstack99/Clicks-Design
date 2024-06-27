@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | PricingSlice
   | WhatWeDoSlice
   | CaseStudiesSlice
   | SectionColumnsSlice
@@ -622,6 +623,159 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Pricing → Default → Primary → Pricing Tables*
+ */
+export interface PricingSliceDefaultPrimaryPricingTablesItem {
+  /**
+   * Plan field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].plan
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  plan: prismic.RichTextField;
+
+  /**
+   * Has Ribbon field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].has_ribbon
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  has_ribbon: prismic.BooleanField;
+
+  /**
+   * Ribbon Label field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].ribbon_label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  ribbon_label: prismic.RichTextField;
+
+  /**
+   * Benefit Sub Description field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].benefit_sub_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_sub_description: prismic.RichTextField;
+
+  /**
+   * Benefit Description field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].benefit_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_description: prismic.RichTextField;
+
+  /**
+   * Benefit List field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].benefit_list
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_list: prismic.RichTextField;
+
+  /**
+   * CTA Button Label field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].cta_button_label
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_button_label: prismic.LinkField;
+
+  /**
+   * CTA Button Link field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].cta_button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_button_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *Pricing → Default → Primary*
+ */
+export interface PricingSliceDefaultPrimary {
+  /**
+   * Section Label field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.section_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_label: prismic.KeyTextField;
+
+  /**
+   * Section Headeline field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.section_headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_headeline: prismic.RichTextField;
+
+  /**
+   * Pricing Tables field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  pricing_tables: prismic.GroupField<
+    Simplify<PricingSliceDefaultPrimaryPricingTablesItem>
+  >;
+}
+
+/**
+ * Default variation for Pricing Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PricingSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Pricing*
+ */
+type PricingSliceVariation = PricingSliceDefault;
+
+/**
+ * Pricing Shared Slice
+ *
+ * - **API ID**: `pricing`
+ * - **Description**: Pricing
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSlice = prismic.SharedSlice<
+  "pricing",
+  PricingSliceVariation
+>;
+
+/**
  * Item in *RecentWork → Default → Primary → Works*
  */
 export interface RecentWorkSliceDefaultPrimaryWorksItem {
@@ -1152,6 +1306,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PricingSlice,
+      PricingSliceDefaultPrimaryPricingTablesItem,
+      PricingSliceDefaultPrimary,
+      PricingSliceVariation,
+      PricingSliceDefault,
       RecentWorkSlice,
       RecentWorkSliceDefaultPrimaryWorksItem,
       RecentWorkSliceDefaultPrimary,

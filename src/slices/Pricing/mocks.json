@@ -1,0 +1,132 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"section_label": {
+				"__TYPE__": "FieldContent",
+				"value": "ranch",
+				"type": "Text"
+			},
+			"section_headeline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Electric"
+						}
+					}
+				]
+			},
+			"pricing_tables": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"plan",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Occaecat et occaecat do adipisicing mollit. Nostrud veniam ipsum consequat dolore ipsum in ullamco excepteur."
+											}
+										}
+									]
+								}
+							],
+							[
+								"has_ribbon",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": false
+								}
+							],
+							[
+								"ribbon_label",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Magna consectetur labore dolor quis pariatur mollit ipsum eu irure est qui ut eu sint. Nulla in amet sint nulla deserunt quis veniam ad Lorem duis quis do sunt dolore non. Id minim officia dolore cupidatat anim cillum cillum esse ea pariatur nulla Lorem esse velit."
+											}
+										}
+									]
+								}
+							],
+							[
+								"benefit_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Lorem pariatur non nulla amet irure."
+											}
+										}
+									]
+								}
+							],
+							[
+								"benefit_list",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sunt dolore sint veniam aute veniam esse ullamco anim et nostrud laboris. Laboris ut elit labore elit officia est eu duis cillum cillum qui eiusmod proident pariatur dolore."
+											}
+										}
+									]
+								}
+							],
+							[
+								"cta_button_label",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev"
+									}
+								}
+							],
+							[
+								"cta_button_link",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev"
+									}
+								}
+							],
+							[
+								"benefit_sub_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Quis ea proident dolor occaecat pariatur commodo duis pariatur. Exercitation consequat consectetur eu id anim id pariatur consectetur voluptate."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
