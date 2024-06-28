@@ -89,16 +89,6 @@
 								}
 							],
 							[
-								"cta_button_label",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://slicemachine.dev"
-									}
-								}
-							],
-							[
 								"cta_button_link",
 								{
 									"__TYPE__": "LinkContent",
@@ -120,6 +110,77 @@
 											}
 										}
 									]
+								}
+							],
+							[
+								"price",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Pariatur esse mollit ut cillum quis Lorem velit ullamco consectetur. Eu irure amet velit eiusmod irure. Nisi ipsum aliquip excepteur incididunt consequat consequat laborum."
+											}
+										}
+									]
+								}
+							],
+							[
+								"cta_button_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "typical",
+									"type": "Text"
+								}
+							],
+							[
+								"price_extra",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Eu laborum officia incididunt eiusmod. Esse cillum velit mollit elit ipsum nisi culpa eiusmod adipisicing magna. Aliquip eu minim culpa irure exercitation consectetur quis amet duis nulla aliqua do eiusmod aute."
+											}
+										}
+									]
+								}
+							],
+							[
+								"extra",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Excepteur dolor laborum eiusmod et dolore nisi cupidatat nulla. Ea dolore ipsum incididunt aute commodo Lorem."
+											}
+										}
+									]
+								}
+							],
+							[
+								"highlight",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": true
+								}
+							],
+							[
+								"custom_quote",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": false
+								}
+							],
+							[
+								"show_primary_button",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": true
 								}
 							]
 						]

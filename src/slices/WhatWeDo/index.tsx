@@ -8,7 +8,7 @@ import {
 } from "@prismicio/react";
 import Bounded from "@/app/components/Bounded";
 import Heading from "@/app/components/Heading";
-import Button from "@/app/components/Button";
+import ButtonPrimary from "@/app/components/ButtonPrimary";
 import { ServicesDocumentData } from "../../../prismicio-types";
 import { PrismicNextImage } from "@prismicio/next";
 
@@ -114,7 +114,6 @@ export type WhatWeDoProps = SliceComponentProps<Content.WhatWeDoSlice>;
  */
 const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
   const client = createClient();
-  console.log(slice);
 
   const services = await Promise.all(
     slice.primary.services.map((item) => {
@@ -187,9 +186,9 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
           </div>
           <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mt-8">
             {slice.primary.show_primary_button ? (
-              <Button field={slice.primary.button_link}>
+              <ButtonPrimary field={slice.primary.button_link}>
                 <>{slice.primary.button_label}</>
-              </Button>
+              </ButtonPrimary>
             ) : null}
           </div>
         </div>
@@ -234,7 +233,7 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
             </>
           </div>
 
-          <div className="pt-16 flex flex-col justify-between text-center items-center">
+          <div className="pt-16 flex flex-col justify-flex-start text-center items-center">
             <PrismicRichText
               field={slice.primary.process_title}
               components={components}
@@ -245,15 +244,18 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
               return (
                 <li
                   key={index}
-                  className="flex flex-col justify-flex-start items-center gap-10 [&:nth-child(1)&>p]:text-black [&:nth-child(2)>p]:text-blue-900 [:nth-child(3)&>p]:text-green-900 [&:nth-child(1)&>span]:bg-black [&:nth-child(2)>span]:bg-blue-900 [:nth-child(3)&>span]:bg-green-900"
+                  className="flex flex-col justify-flex-start items-flex-start gap-10 [&:nth-child(1)&>p]:text-black [&:nth-child(2)>p]:text-blue-900 [:nth-child(3)&>p]:text-green-900 [&:nth-child(1)&>span]:bg-black [&:nth-child(2)>span]:bg-blue-900 [:nth-child(3)&>span]:bg-green-900"
                 >
-                  <span className="relative w-fit h-5 bg-black flex flex-row justify-center items-center item-center rounded-full px-4 py-4">
+                  <span className="relative w-fit h-9 bg-black flex flex-row justify-center items-center item-center rounded-full px-4 py-4">
                     <PrismicRichText
                       field={item.title}
                       components={processComponents}
                     />
                   </span>
-                  <PrismicNextImage field={item.task_image} />
+                  <PrismicNextImage
+                    field={item.task_image}
+                    className="max-w-[300px] h-auto"
+                  />
                 </li>
               );
             })}

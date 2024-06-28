@@ -34,10 +34,37 @@
             "label": "Pricing Tables",
             "repeat": true,
             "fields": {
+              "highlight": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Highlight",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
               "plan": {
                 "type": "StructuredText",
                 "config": {
                   "label": "Plan",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "single": "paragraph"
+                }
+              },
+              "custom_quote": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Custom Quote",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
+              "price": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Price",
                   "placeholder": "",
                   "allowTargetBlank": false,
                   "single": "paragraph"
@@ -88,12 +115,20 @@
                   "multi": "paragraph,strong,o-list-item,list-item,em"
                 }
               },
+              "show_primary_button": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Show Primary Button",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
               "cta_button_label": {
-                "type": "Link",
+                "type": "Text",
                 "config": {
                   "label": "CTA Button Label",
-                  "placeholder": "",
-                  "select": null
+                  "placeholder": ""
                 }
               },
               "cta_button_link": {
@@ -102,6 +137,24 @@
                   "label": "CTA Button Link",
                   "placeholder": "",
                   "select": null
+                }
+              },
+              "extra": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Extra",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "paragraph,strong"
+                }
+              },
+              "price_extra": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Price Extra",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "multi": "paragraph,strong"
                 }
               }
             }

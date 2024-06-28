@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { PrismicNextLink, PrismicNextLinkProps } from "@prismicio/next";
 import Bounded from "./Bounded";
 
-export default async function Button({
+export default async function ButtonPrimary({
   className,
   ...restProps
 }: PrismicNextLinkProps) {

@@ -29,8 +29,8 @@ const config = {
       s: ["1rem", "1.25rem"],
       base: ["1.2rem", "1.625rem"],
       sm: ["1.125rem", "1.625rem"],
-      lg: ["1.25rem", "2.25rem"],
       md: ["1.5rem", "2.25rem"],
+      lg: ["2.1rem", "2.25rem"],
       xl: ["2.25rem", "2.75rem"],
       "2xl": ["3rem", "3rem"],
       "3xl": ["5rem", "2.75rem"],
@@ -78,6 +78,8 @@ const config = {
           "linear-gradient(360deg, rgb(255 78 0), rgb(255 133 79))",
         "gradient-linear-grey":
           "linear-gradient(to top, rgb(233 233 233 / 10%), rgb(233 233 233 /20%))",
+        "gradient-linear-black":
+          "linear-gradient(360deg, rgb(0 0 0), rgb(0 0 0 / 49%))",
       },
       boxShadow: {
         "1xl": "0 2px 4px 2px rgba(0, 0, 0, 0.2)",

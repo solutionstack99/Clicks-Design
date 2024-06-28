@@ -35,13 +35,12 @@ export default function Heading({
         size === "xl" && "text-md md:text-xl font-lato w-full",
         size === "md" && "text-md md:text-md font-lato w-full leading-7",
         size === "lg" &&
-          "text-md md:text-lg font-lato w-full leading-9 md:leading-7",
+          "text-lg md:text-lg font-lato w-full leading-9 md:leading-7",
         size === "sm" && "text-sm md:text-sm font-lato font-thin w-full",
-        size === "base" && "text-base md:text-base font-lato font-thin w-full",
-        size === "s" && "text-s md:text-s font-lato font-thin w-full",
+        size === "base" && "text-base md:text-base font-lato w-fit",
+        size === "s" && "text-s md:text-s font-lato w-full",
         size === "xs" &&
-          "text-xs md:text-xs leading-6 md:leading-7 font-lato font-thin w-full",
-        size === "xs" && "text-xs md:text-xs font-lato font-thin w-full",
+          "text-xs md:text-xs leading-6 md:leading-7 font-lato w-full",
         size === "xxs" && "text-xxs md:text-xxs font-lato font-thin w-full",
         className
       )}

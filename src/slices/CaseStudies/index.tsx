@@ -6,7 +6,7 @@ import {
 } from "@prismicio/react";
 import Heading from "@/app/components/Heading";
 import Bounded from "@/app/components/Bounded";
-import Button from "@/app/components/Button";
+import ButtonPrimary from "@/app/components/ButtonPrimary";
 import { PrismicNextImage } from "@prismicio/next";
 
 const components: JSXMapSerializer = {
@@ -54,9 +54,9 @@ const CaseStudies = ({ slice }: CaseStudiesProps): JSX.Element => {
         })}
         <div className="flex flex-col justify-center items-center mt-8">
           {slice.primary.show_primary_button ? (
-            <Button field={slice.primary.button_link}>
+            <ButtonPrimary field={slice.primary.button_link}>
               <>{slice.primary.button_label}</>
-            </Button>
+            </ButtonPrimary>
           ) : null}
           <p className="text-grey-500 text-xs font-light font-lato lg:text-sm mt-2">
             <>{slice.primary.button_sub_text}</>

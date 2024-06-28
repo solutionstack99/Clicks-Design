@@ -627,6 +627,17 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export interface PricingSliceDefaultPrimaryPricingTablesItem {
   /**
+   * Highlight field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].highlight
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  highlight: prismic.BooleanField;
+
+  /**
    * Plan field in *Pricing → Default → Primary → Pricing Tables*
    *
    * - **Field Type**: Rich Text
@@ -635,6 +646,27 @@ export interface PricingSliceDefaultPrimaryPricingTablesItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   plan: prismic.RichTextField;
+
+  /**
+   * Custom Quote field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].custom_quote
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  custom_quote: prismic.BooleanField;
+
+  /**
+   * Price field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].price
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  price: prismic.RichTextField;
 
   /**
    * Has Ribbon field in *Pricing → Default → Primary → Pricing Tables*
@@ -688,14 +720,25 @@ export interface PricingSliceDefaultPrimaryPricingTablesItem {
   benefit_list: prismic.RichTextField;
 
   /**
+   * Show Primary Button field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].show_primary_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_primary_button: prismic.BooleanField;
+
+  /**
    * CTA Button Label field in *Pricing → Default → Primary → Pricing Tables*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: pricing.default.primary.pricing_tables[].cta_button_label
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  cta_button_label: prismic.LinkField;
+  cta_button_label: prismic.KeyTextField;
 
   /**
    * CTA Button Link field in *Pricing → Default → Primary → Pricing Tables*
@@ -706,6 +749,26 @@ export interface PricingSliceDefaultPrimaryPricingTablesItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_button_link: prismic.LinkField;
+
+  /**
+   * Extra field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].extra
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  extra: prismic.RichTextField;
+
+  /**
+   * Price Extra field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].price_extra
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  price_extra: prismic.RichTextField;
 }
 
 /**

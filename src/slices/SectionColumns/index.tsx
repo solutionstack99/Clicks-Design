@@ -6,7 +6,7 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 import Heading from "@/app/components/Heading";
-import Button from "@/app/components/Button";
+import ButtonPrimary from "@/app/components/ButtonPrimary";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -86,9 +86,9 @@ const SectionColumns = ({ slice }: SectionColumnsProps): JSX.Element => {
 
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mt-8">
           {slice.primary.show_primary_button ? (
-            <Button field={slice.primary.button_link}>
+            <ButtonPrimary field={slice.primary.button_link}>
               <>{slice.primary.button_label}</>
-            </Button>
+            </ButtonPrimary>
           ) : null}
         </div>
       </div>

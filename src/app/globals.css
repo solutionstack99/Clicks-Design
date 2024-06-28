@@ -27,6 +27,24 @@
 }
 
 @layer components {
+  .button-Secoundary-hover {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: left center;
+  }
+}
+
+@layer components {
   .nav-stroke {
     position: absolute;
     bottom: 0;

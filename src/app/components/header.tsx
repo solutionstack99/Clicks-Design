@@ -4,7 +4,7 @@ import { createClient } from "@/prismicio";
 import Logo from "@/app/components/Logo";
 import Navbar from "./Navbar";
 import Bounded from "./Bounded";
-import Button from "./Button";
+import ButtonPrimary from "@/app/components/ButtonPrimary";
 
 export default async function Header() {
   const client = createClient();
@@ -20,12 +20,12 @@ export default async function Header() {
 
       <Navbar />
 
-      <Button
+      <ButtonPrimary
         field={settings.data.cta_button_link}
         className="relative block z-10"
       >
         <>{settings.data.cta_button_label}</>
-      </Button>
+      </ButtonPrimary>
     </Bounded>
   );
 }
