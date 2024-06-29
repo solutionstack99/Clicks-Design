@@ -47,20 +47,6 @@
 								}
 							],
 							[
-								"ribbon_label",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Magna consectetur labore dolor quis pariatur mollit ipsum eu irure est qui ut eu sint. Nulla in amet sint nulla deserunt quis veniam ad Lorem duis quis do sunt dolore non. Id minim officia dolore cupidatat anim cillum cillum esse ea pariatur nulla Lorem esse velit."
-											}
-										}
-									]
-								}
-							],
-							[
 								"benefit_description",
 								{
 									"__TYPE__": "StructuredTextContent",
@@ -181,6 +167,14 @@
 								{
 									"__TYPE__": "BooleanContent",
 									"value": true
+								}
+							],
+							[
+								"ribbon_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "various",
+									"type": "Text"
 								}
 							]
 						]

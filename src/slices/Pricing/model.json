@@ -80,12 +80,10 @@
                 }
               },
               "ribbon_label": {
-                "type": "StructuredText",
+                "type": "Text",
                 "config": {
                   "label": "Ribbon Label",
-                  "placeholder": "",
-                  "allowTargetBlank": false,
-                  "single": "paragraph"
+                  "placeholder": ""
                 }
               },
               "benefit_sub_description": {

@@ -9,7 +9,7 @@ import {
 import Bounded from "@/app/components/Bounded";
 import Heading from "@/app/components/Heading";
 import ButtonPrimary from "@/app/components/ButtonPrimary";
-import ButtonSecoundary from "@/app/components/ButtonSecoundary";
+import Button from "@/app/components/Button";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -51,7 +51,7 @@ const priceComponents: JSXMapSerializer = {
 
 const ribbonComponents: JSXMapSerializer = {
   paragraph: ({ children }) => (
-    <Heading as="p" size="xs" className="text-left text-grey-900 font-semibold">
+    <Heading as="p" size="xs" className="text-left text-blue font-semibold">
       {children}
     </Heading>
   ),
@@ -80,7 +80,9 @@ const benefitComponents: JSXMapSerializer = {
     </Heading>
   ),
   list: ({ children }) => (
-    <ul className="list-disc list-inside pb-5">{children}</ul>
+    <ul className="list-disc list-inside pb-5 [&:nth-child(1)&>li]:text-blue/80 [&:nth-child(1)&>li]:check-icon [&:nth-child(1)&>li]:list-marker">
+      {children}
+    </ul>
   ),
 };
 
@@ -116,7 +118,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                 return (
                   <div
                     key={index}
-                    className={`flex flex-col justify-around text-left items-start flex-wrap mt-20 sm:min-h-[500px] lg:max-h-[900px] lg:max-w-[700px] w-full shadow-md col-span-1 border-0 rounded-[24px] p-7 gap-5 hover:mt-[1px] ease-in duration-300 ${item.highlight ? "bg-grey-900" : "bg-white"}`}
+                    className={`flex flex-col justify-start text-left items-start flex-wrap mt-20 sm:min-h-[500px] lg:max-h-[900px] lg:max-w-[700px] w-full shadow-md col-span-1 border-0 rounded-[24px] p-7 gap-5 hover:mt-[1px] ease-in duration-300 ${item.highlight ? "bg-gradient-linear-light-blue" : "bg-white"}`}
                   >
                     {/* Start Header */}
                     <div className="flex flex-col justify-between text-left items-start w-full border-b border-b-grey-900">
@@ -126,13 +128,16 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                           components={components}
                         />
 
-                        <div className="bg-primary rounded-[24px] py-[1.5px] px-2">
+                        <div
+                          className={`${item.highlight ? "bg-lightblue/20" : "bg-primary/10"} rounded-[24px] py-[1.5px] px-2`}
+                        >
                           <>
                             {item.has_ribbon ? (
-                              <PrismicRichText
-                                field={item.ribbon_label}
-                                components={ribbonComponents}
-                              />
+                              <p
+                                className={`${item.highlight ? "text-blue" : "text-primary"} font-lato text-xs font-semibold`}
+                              >
+                                {item.ribbon_label}
+                              </p>
                             ) : null}
                           </>
                         </div>
@@ -171,31 +176,27 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                     {/* End Header */}
 
                     {/* Start Benefit List */}
+                    <>
+                      {item.show_primary_button ? (
+                        <ButtonPrimary
+                          field={item.cta_button_link}
+                          className="w-full"
+                        >
+                          <span className="w-full">
+                            {item.cta_button_label}
+                          </span>
+                        </ButtonPrimary>
+                      ) : (
+                        <Button field={item.cta_button_link} className="w-full">
+                          <>{item.cta_button_label}</>
+                        </Button>
+                      )}
+                    </>
                     <div className="flex flex-col justify-start text-left items-start w-full">
                       <PrismicRichText
                         field={item.benefit_list}
                         components={benefitComponents}
                       />
-
-                      <>
-                        {item.show_primary_button ? (
-                          <ButtonPrimary
-                            field={item.cta_button_link}
-                            className="w-full"
-                          >
-                            <span className="w-full">
-                              {item.cta_button_label}
-                            </span>
-                          </ButtonPrimary>
-                        ) : (
-                          <ButtonSecoundary
-                            field={item.cta_button_link}
-                            className="w-full"
-                          >
-                            <>{item.cta_button_label}</>
-                          </ButtonSecoundary>
-                        )}
-                      </>
                     </div>
                     {/* End Benefit List */}
                   </div>

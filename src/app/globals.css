@@ -14,6 +14,24 @@
     display: block;
     width: 100%;
     height: 100%;
+    background: #000000;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: left center;
+  }
+}
+
+@layer components {
+  .button-primary-hover {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
     background: #ff4e00;
     border-radius: 0.5rem;
     position: absolute;
@@ -32,7 +50,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: #000000;
+    background: hsl(220.71deg 100% 50%);
     border-radius: 0.5rem;
     position: absolute;
     left: 0;
@@ -60,6 +78,29 @@
   .nav-stroke-hover {
     transition: all 0.5s;
     width: 100%;
+  }
+}
+
+@layer components {
+  .check-icon::before {
+    content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='20' viewBox='0 0 180 156' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath opacity='0.2' d='M112.245 139.293L171.532 42.1514C183.187 23.0648 151.732 7.15282 140.07 26.255L90.405 107.586L47.0325 76.019C28.29 62.369 5.80497 87.953 24.5475 101.595L83.415 144.456C84.075 145.002 84.7875 145.494 85.53 145.954C90.1725 148.972 94.995 149.682 99.33 148.824C103.695 148.122 107.865 145.806 110.895 141.399C111.39 140.728 111.847 140.018 112.215 139.293H112.245Z' fill='%230052FF' fill-opacity='0.8'/%3e%3cpath d='M159.547 15.0151L99.5475 113.295C95.6625 119.668 85.17 114.356 89.0625 107.991L149.062 9.71107C152.947 3.34627 163.432 8.65027 159.547 15.0151Z' fill='%230052FF' fill-opacity='0.8'/%3e%3cpath d='M38.0475 62.7044L98.0475 106.384C104.287 110.932 96.795 119.457 90.555 114.902L30.555 71.222C24.315 66.6824 31.8075 58.1492 38.0475 62.7044Z' fill='%230052FF' fill-opacity='0.8'/%3e%3c/svg%3e");
+    color: hsl(220.71deg 100% 50%);
+    display: inline-block;
+    width: 24px;
+    height: 20px;
+    margin-right: 0.5em; /* Adjust spacing as needed */
+    vertical-align: -0.25em; /* Adjust alignment as needed */
+  }
+}
+
+@layer components {
+  .list-marker::marker {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 20px;
+    margin-right: 0.5em; /* Adjust spacing as needed */
+    vertical-align: -0.25em; /* Adjust alignment as needed */
   }
 }
 

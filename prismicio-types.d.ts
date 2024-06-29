@@ -682,12 +682,12 @@ export interface PricingSliceDefaultPrimaryPricingTablesItem {
   /**
    * Ribbon Label field in *Pricing → Default → Primary → Pricing Tables*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: pricing.default.primary.pricing_tables[].ribbon_label
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  ribbon_label: prismic.RichTextField;
+  ribbon_label: prismic.KeyTextField;
 
   /**
    * Benefit Sub Description field in *Pricing → Default → Primary → Pricing Tables*

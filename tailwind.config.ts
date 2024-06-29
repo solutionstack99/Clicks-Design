@@ -51,6 +51,8 @@ const config = {
           600: "#FAFAFA",
           500: "#9C9C9C",
         },
+        lightblue: "hsl(220.71deg 80.77% 79.61% / 70%)",
+        blue: "hsl(220.71deg 100% 50%)",
         "background-color": "hsl(53 50% 93% 1)",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -80,14 +82,19 @@ const config = {
           "linear-gradient(to top, rgb(233 233 233 / 10%), rgb(233 233 233 /20%))",
         "gradient-linear-black":
           "linear-gradient(360deg, rgb(0 0 0), rgb(0 0 0 / 49%))",
+        "gradient-linear-blue":
+          "linear-gradient(209deg, rgb(220 227 242 / 70%) , rgb(255 255 255 / 100%))",
+        "gradient-linear-light-blue":
+          "linear-gradient(209deg, rgb(220 227 242 / 50%) , rgb(255 255 255 / 100%))",
+        "gradient-linear-dark-blue":
+          "linear-gradient(to top, rgb(0 82 255), rgb(107 151 245))",
       },
       boxShadow: {
         "1xl": "0 2px 4px 2px rgba(0, 0, 0, 0.2)",
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      boxShadowButton: {
+        "box-shadow":
+          "rgba(74, 146, 255, 0.72) 0px 0.602187px 3.01094px -1.25px inset, rgba(74, 146, 255, 0.635) 0px 2.28853px 11.4427px -2.5px inset, rgba(74, 146, 255, 0.25) 0px 10px 50px -3.75px inset, rgba(0, 0, 0, 0.184) 0px 0.796192px 0.796192px -0.9375px, rgba(0, 0, 0, 0.173) 0px 2.41451px 2.41451px -1.875px, rgba(0, 0, 0, 0.15) 0px 6.38265px 6.38265px -2.8125px, rgba(0, 0, 0, 0.063) 0px 20px 20px -3.75px, rgba(255, 231, 222, 0.25) 0px -6px 8px 0px inset",
       },
       keyframes: {
         "accordion-down": {
