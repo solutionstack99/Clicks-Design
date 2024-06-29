@@ -49,14 +49,6 @@ const priceComponents: JSXMapSerializer = {
   ),
 };
 
-const ribbonComponents: JSXMapSerializer = {
-  paragraph: ({ children }) => (
-    <Heading as="p" size="xs" className="text-left text-blue font-semibold">
-      {children}
-    </Heading>
-  ),
-};
-
 const subdescriptionComponents: JSXMapSerializer = {
   paragraph: ({ children }) => (
     <Heading as="p" size="xs" className="text-left text-black font-normal">
@@ -83,6 +75,18 @@ const benefitComponents: JSXMapSerializer = {
     <ul className="list-disc list-inside pb-5 [&:nth-child(1)&>li]:text-bluebackground [&:nth-child(1)&>li]:check-icon [&:nth-child(1)&>li]:list-marker">
       {children}
     </ul>
+  ),
+};
+
+const extraComponents: JSXMapSerializer = {
+  paragraph: ({ children }) => (
+    <Heading
+      as="p"
+      size="xs"
+      className="text-left text-bluebackground font-semibold"
+    >
+      {children}
+    </Heading>
   ),
 };
 
@@ -192,13 +196,47 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                         </Button>
                       )}
                     </>
-                    <div className="flex flex-col justify-start text-left items-start w-full">
+                    <div className="flex flex-col justify-start text-left items-start w-full border-b border-b-grey-900">
                       <PrismicRichText
                         field={item.benefit_list}
                         components={benefitComponents}
                       />
                     </div>
                     {/* End Benefit List */}
+
+                    {/* Start Extra */}
+                    <div className="flex flex-row justify-between items-start w-full">
+                      <div className="flex flex-row justify-between items-start gap-2 w-fit">
+                        <div className="flex flex-row pt-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            aria-hidden="true"
+                            className="text-bluebackground h-5 w-5 flex-none"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </div>
+                        <PrismicRichText
+                          field={item.extra}
+                          components={extraComponents}
+                        />
+                      </div>
+                      <div
+                        className={`${item.highlight ? "bg-lightblue/20" : "bg-primary/10"} rounded-[24px] py-[1.5px] px-2 flex justify-end items-end w-fit`}
+                      >
+                        <PrismicRichText
+                          field={item.price_extra}
+                          components={extraComponents}
+                        />
+                      </div>
+                    </div>
+                    {/* End Extra */}
                   </div>
                 );
               })}
