@@ -52,7 +52,7 @@ const config = {
           500: "#9C9C9C",
         },
         lightblue: "hsl(220.71deg 80.77% 79.61% / 70%)",
-        blue: "hsl(220.71deg 100% 50%)",
+        bluebackground: "hsl(220.71deg 100% 50%)",
         "background-color": "hsl(53 50% 93% 1)",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

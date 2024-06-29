@@ -80,7 +80,7 @@ const benefitComponents: JSXMapSerializer = {
     </Heading>
   ),
   list: ({ children }) => (
-    <ul className="list-disc list-inside pb-5 [&:nth-child(1)&>li]:text-blue/80 [&:nth-child(1)&>li]:check-icon [&:nth-child(1)&>li]:list-marker">
+    <ul className="list-disc list-inside pb-5 [&:nth-child(1)&>li]:text-bluebackground [&:nth-child(1)&>li]:check-icon [&:nth-child(1)&>li]:list-marker">
       {children}
     </ul>
   ),
@@ -134,7 +134,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                           <>
                             {item.has_ribbon ? (
                               <p
-                                className={`${item.highlight ? "text-blue" : "text-primary"} font-lato text-xs font-semibold`}
+                                className={`${item.highlight ? "text-bluebackground" : "text-primary"} font-lato text-xs font-semibold`}
                               >
                                 {item.ribbon_label}
                               </p>
