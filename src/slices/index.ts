@@ -8,5 +8,6 @@ export const components = {
   pricing: dynamic(() => import("./Pricing")),
   recent_work: dynamic(() => import("./RecentWork")),
   section_columns: dynamic(() => import("./SectionColumns")),
+  testimonial: dynamic(() => import("./Testimonial")),
   what_we_do: dynamic(() => import("./WhatWeDo")),
 };
