@@ -44,12 +44,18 @@ const config = {
         foreground: "hsl(var(--foreground))",
         primary: "hsl(19 100% 55% / 1)",
         secondary: "hsl(45 3 23 / 1)",
+        black: {
+          DEFAULT: "#000",
+          900: "#07111d",
+        },
         grey: {
           900: "#E9E9E9",
           800: "#F0F0F0",
           700: "#F7F7F7",
           600: "#FAFAFA",
           500: "#9C9C9C",
+          400: "#616161",
+          300: "#333333",
         },
         lightblue: "hsl(220.71deg 80.77% 79.61% / 70%)",
         bluebackground: "hsl(220.71deg 100% 50%)",

@@ -36,7 +36,7 @@ export default function Heading({
         size === "md" && "text-md md:text-md font-lato w-full leading-7",
         size === "lg" &&
           "text-lg md:text-lg font-lato w-full leading-9 md:leading-7",
-        size === "sm" && "text-sm md:text-sm font-lato font-thin w-full",
+        size === "sm" && "text-sm md:text-sm font-lato w-full",
         size === "base" && "text-base md:text-base font-lato w-fit",
         size === "s" && "text-s md:text-s font-lato w-full",
         size === "xs" &&

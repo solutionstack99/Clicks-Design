@@ -66,7 +66,7 @@ const featureComponents: JSXMapSerializer = {
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <Heading as="p" size="s" className="text-center text-black">
+    <Heading as="p" size="s" className="text-center text-black-900">
       {children}
     </Heading>
   ),
@@ -210,7 +210,7 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
                     key={index}
                     className="flex flex-col justify-between text-center items-center flex-wrap mt-20 sm:min-h-[250px] lg:max-h-[250px] col-span-1 max-w-[500px] lg:max-w-max-[500px] w-full bg-grey-900/50 border-white border-[5px] rounded-[24px] p-7 gap-5"
                   >
-                    <div className="flex flex-col justify-center items-center bg-white py-10 px-5 rounded-full  border-[1px]  border-grey-500/10 h-[94px] w-[94px] m-[-80px]">
+                    <div className="flex flex-col justify-center items-center bg-white py-10 px-5 rounded-full border-[1px] border-grey-500/10 h-[94px] w-[94px] m-[-80px]">
                       <PrismicRichText
                         field={item.number}
                         components={featureNumberComponents}

@@ -1,6 +1,4 @@
 import { Content } from "@prismicio/client";
-import { createClient } from "@/prismicio";
-import { isFilled } from "@prismicio/client";
 import {
   JSXMapSerializer,
   PrismicRichText,
@@ -34,7 +32,7 @@ const components: JSXMapSerializer = {
     <Heading
       as="p"
       size="base"
-      className="text-left text-black font-bold uppercase"
+      className="text-left text-black-900 font-bold uppercase"
     >
       {children}
     </Heading>
@@ -228,7 +226,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                               clip-rule="evenodd"
                               d="M19.3846 3.28845L17.3076 12.8346C17.3076 13.2269 17.5846 13.4231 17.9307 13.4231H28.7307C29.4923 13.4231 29.9769 14.2731 29.6307 14.9269L17.8615 33.1692C17.3769 34.0846 15.923 33.7577 15.923 32.7115L17.9999 21.4654C17.9999 21.0731 17.6538 21.2038 17.2384 21.2038H5.88456C5.12302 21.2038 4.56918 20.1577 4.98456 19.5038L17.4461 2.83076C17.9307 1.98076 19.3846 2.2423 19.3846 3.28845V3.28845Z"
                               fill="#0052FF"
-                              fill-opacity="0.5"
+                              fillOpacity="0.5"
                             />
                           </svg>
                         </div>
