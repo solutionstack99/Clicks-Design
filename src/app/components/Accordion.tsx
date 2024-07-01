@@ -69,7 +69,7 @@ export function AccordionUI({ slice }: FaqsItemProps) {
                   components={components}
                 />
               </AccordionTrigger>
-              <AccordionContent className="bg-grey-900/50 border-0 rounded-md p-5">
+              <AccordionContent className="bg-grey-900/50 border-0 rounded-md p-5 mt-5">
                 <PrismicRichText
                   field={item.answer}
                   components={AnswerComponents}

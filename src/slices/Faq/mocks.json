@@ -40,6 +40,17 @@
 						]
 					}
 				]
+			},
+			"pitch": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Labore esse amet commodo enim aliquip. Ullamco reprehenderit esse ullamco sit sint occaecat voluptate irure dolor enim fugiat ullamco."
+						}
+					}
+				]
 			}
 		},
 		"items": []

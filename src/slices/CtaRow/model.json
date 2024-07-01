@@ -1,0 +1,43 @@
+{
+  "id": "cta_row",
+  "type": "SharedSlice",
+  "name": "CtaRow",
+  "description": "CtaRow",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "headeline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headeline",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading2,strong"
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

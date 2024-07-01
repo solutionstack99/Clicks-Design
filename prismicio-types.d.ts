@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | CtaRowSlice
   | FaqSlice
   | TestimonialSlice
   | PricingSlice
@@ -547,6 +548,68 @@ export type CaseStudiesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *CtaRow → Default → Primary*
+ */
+export interface CtaRowSliceDefaultPrimary {
+  /**
+   * Headeline field in *CtaRow → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_row.default.primary.headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headeline: prismic.RichTextField;
+
+  /**
+   * Button Label field in *CtaRow → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_row.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *CtaRow → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_row.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for CtaRow Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaRowSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CtaRowSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CtaRow*
+ */
+type CtaRowSliceVariation = CtaRowSliceDefault;
+
+/**
+ * CtaRow Shared Slice
+ *
+ * - **API ID**: `cta_row`
+ * - **Description**: CtaRow
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaRowSlice = prismic.SharedSlice<"cta_row", CtaRowSliceVariation>;
+
+/**
  * Item in *Faq → Default → Primary → FAQ Items*
  */
 export interface FaqSliceDefaultPrimaryFaqItemsItem {
@@ -584,6 +647,16 @@ export interface FaqSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   faq_items: prismic.GroupField<Simplify<FaqSliceDefaultPrimaryFaqItemsItem>>;
+
+  /**
+   * Pitch field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.pitch
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  pitch: prismic.RichTextField;
 }
 
 /**
@@ -1593,6 +1666,10 @@ declare module "@prismicio/client" {
       CaseStudiesSliceDefaultPrimary,
       CaseStudiesSliceVariation,
       CaseStudiesSliceDefault,
+      CtaRowSlice,
+      CtaRowSliceDefaultPrimary,
+      CtaRowSliceVariation,
+      CtaRowSliceDefault,
       FaqSlice,
       FaqSliceDefaultPrimaryFaqItemsItem,
       FaqSliceDefaultPrimary,

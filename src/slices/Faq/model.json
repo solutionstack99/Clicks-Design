@@ -38,6 +38,15 @@
               }
             }
           }
+        },
+        "pitch": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Pitch",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "strong,hyperlink,paragraph"
+          }
         }
       },
       "items": {}

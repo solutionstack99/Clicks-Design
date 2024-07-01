@@ -1,7 +1,20 @@
 import { AccordionUI } from "@/app/components/Accordion";
 import Bounded from "@/app/components/Bounded";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import Heading from "@/app/components/Heading";
+import {
+  JSXMapSerializer,
+  PrismicRichText,
+  SliceComponentProps,
+} from "@prismicio/react";
+
+const components: JSXMapSerializer = {
+  paragraph: ({ children }) => (
+    <Heading as="p" size="base" className="text-center text-black-900">
+      {children}
+    </Heading>
+  ),
+};
 
 /**
  * Props for `Faq`.
@@ -16,11 +29,18 @@ const Faq = ({ slice }: FaqProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="px-5 lg:px-8 2xl:px-20"
+      className="container px-5 lg:px-8 2xl:px-20"
     >
       <div className="w-full lg:max-w-4xl mx-auto">
         <div className="flex flex-col justify-between text-center items-center">
           <AccordionUI slice={slice} />
+        </div>
+
+        <div className="flex flex-col justify-center items-center mt-8">
+          <PrismicRichText
+            field={slice.primary.pitch}
+            components={components}
+          />
         </div>
       </div>
     </Bounded>
