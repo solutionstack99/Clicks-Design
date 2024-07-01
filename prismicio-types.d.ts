@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | FaqSlice
   | TestimonialSlice
   | PricingSlice
   | WhatWeDoSlice
@@ -544,6 +545,73 @@ export type CaseStudiesSlice = prismic.SharedSlice<
   "case_studies",
   CaseStudiesSliceVariation
 >;
+
+/**
+ * Item in *Faq → Default → Primary → FAQ Items*
+ */
+export interface FaqSliceDefaultPrimaryFaqItemsItem {
+  /**
+   * Question field in *Faq → Default → Primary → FAQ Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.faq_items[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *Faq → Default → Primary → FAQ Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.faq_items[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Faq → Default → Primary*
+ */
+export interface FaqSliceDefaultPrimary {
+  /**
+   * FAQ Items field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.faq_items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  faq_items: prismic.GroupField<Simplify<FaqSliceDefaultPrimaryFaqItemsItem>>;
+}
+
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Faq*
+ */
+type FaqSliceVariation = FaqSliceDefault;
+
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq`
+ * - **Description**: Faq
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
  * Item in *Hero → Default → Primary → Client Images*
@@ -1525,6 +1593,11 @@ declare module "@prismicio/client" {
       CaseStudiesSliceDefaultPrimary,
       CaseStudiesSliceVariation,
       CaseStudiesSliceDefault,
+      FaqSlice,
+      FaqSliceDefaultPrimaryFaqItemsItem,
+      FaqSliceDefaultPrimary,
+      FaqSliceVariation,
+      FaqSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryClientImagesItem,
       HeroSliceDefaultPrimaryStarsItem,

@@ -116,13 +116,14 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
             components={components}
           />
 
-          <div className="text-center grid grid-cols-1 lg:grid-cols-2 p-2 gap-2 lg:gap-9 w-full">
+          {/* Start Pricing Cards */}
+          <div className="ralative text-center grid grid-cols-1 lg:grid-cols-2 p-2 gap-2 lg:gap-9 w-full">
             <>
               {slice.primary.pricing_tables.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className={`flex flex-col justify-start text-left items-start flex-wrap mt-20 sm:min-h-[500px] lg:max-h-[900px] lg:max-w-[700px] w-full shadow-md col-span-1 border-0 rounded-[24px] p-7 gap-5 hover:mt-[1px] ease-in duration-300 ${item.highlight ? "bg-gradient-linear-light-blue" : "bg-white"}`}
+                    className={`flex flex-col justify-between text-left items-start flex-wrap mt-20 sm:min-h-[500px] lg:max-h-[900px] lg:max-w-[700px] w-full shadow-md col-span-1 border-0 rounded-[24px] p-7 gap-5 hover:mt-[1px] ease-in duration-300 ${item.highlight ? "bg-gradient-linear-light-blue" : "bg-white"}`}
                   >
                     {/* Start Header */}
                     <div className="flex flex-col justify-between text-left items-start w-full border-b border-b-grey-900">
@@ -251,6 +252,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
               })}
             </>
           </div>
+          {/* End Pricing Cards */}
         </div>
       </div>
     </Bounded>
