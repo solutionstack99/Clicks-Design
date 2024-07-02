@@ -32,7 +32,7 @@ const CtaRow = ({ slice }: CtaRowProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 lg:pb-5 pt-20 md:pt-56 px-5 lg:px-8 2xl:px-20"
+      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-20 lg:pb-36 pt-20 md:pt-56 px-5 lg:px-8 2xl:px-20"
     >
       <div className="flex flex-col justify-center items-center w-full mx-auto md:max-w-[800px]">
         <PrismicRichText
