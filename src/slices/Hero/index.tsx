@@ -1,4 +1,5 @@
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
+import Script from "next/script";
 
 import Bounded from "@/app/components/Bounded";
 import { Content } from "@prismicio/client";
@@ -54,7 +55,18 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <>
         <div className="relative flex flex-row items-center justify-center gap-2">
-          <ul className="flex flex-row items-center justify-center">
+          <div
+            className="senja-embed"
+            data-id="7dd2c08d-64d9-43b8-8cc3-5b19e2252648"
+            data-mode="shadow"
+            data-lazyload="false"
+          ></div>
+          <script
+            async
+            type="text/javascript"
+            src="https://widget.senja.io/widget/7dd2c08d-64d9-43b8-8cc3-5b19e2252648/platform.js"
+          ></script>
+          {/* <ul className="flex flex-row items-center justify-center">
             {slice.primary.client_images.map((item, index) => {
               return (
                 <li key={index} className="ml-[-16px]">
@@ -75,7 +87,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <p className="font-lato text-secondary font-normal text-sm">
               loved by founders
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[540px] xs:max-w-[340px]">
