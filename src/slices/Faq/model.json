@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "headeline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headeline",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading2,strong,em"
+          }
+        },
         "faq_items": {
           "type": "Group",
           "config": {

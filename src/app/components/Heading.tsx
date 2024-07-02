@@ -31,8 +31,8 @@ export default function Heading({
         "font-lato",
         size === "3xl" &&
           "text-2xl md:text-3xl font-lato w-full leading-10 md:leading-none",
-        size === "2xl" && "text-xl md:text-2xl font-lato w-full",
-        size === "xl" && "text-md md:text-xl font-lato w-full",
+        size === "2xl" && "text-xl md:text-2xl font-lato w-full leading-snug",
+        size === "xl" && "text-md md:text-xl font-lato w-full leading-snug",
         size === "md" && "text-md md:text-md font-lato w-full leading-7",
         size === "lg" &&
           "text-lg md:text-lg font-lato w-full leading-9 md:leading-7",

@@ -9,6 +9,15 @@ import {
 } from "@prismicio/react";
 
 const components: JSXMapSerializer = {
+  heading2: ({ children }) => (
+    <Heading
+      as="h2"
+      size="2xl"
+      className="text-center font-semibold text-black pt-2.5 pb-7"
+    >
+      {children}
+    </Heading>
+  ),
   paragraph: ({ children }) => (
     <Heading as="p" size="base" className="text-center text-black-900">
       {children}
@@ -31,6 +40,13 @@ const Faq = ({ slice }: FaqProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="container px-5 lg:px-8 2xl:px-20"
     >
+      <div className="flex flex-col justify-center items-center w-full mx-auto">
+        <PrismicRichText
+          field={slice.primary.headeline}
+          components={components}
+        />
+      </div>
+
       <div className="w-full lg:max-w-4xl mx-auto">
         <div className="flex flex-col justify-between text-center items-center">
           <AccordionUI slice={slice} />

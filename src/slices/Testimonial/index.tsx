@@ -6,9 +6,6 @@ import {
 } from "@prismicio/react";
 import Heading from "@/app/components/Heading";
 import Bounded from "@/app/components/Bounded";
-import ButtonPrimary from "@/app/components/ButtonPrimary";
-
-import Script from "next/script";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -43,7 +40,7 @@ const Testimonial = ({ slice }: TestimonialProps): JSX.Element => {
           components={components}
         />
         <div
-          className="senja-embed block"
+          className="senja-embed block pt-20"
           data-id="55e7182e-305a-4863-903b-e7f217bc873a"
           data-mode="shadow"
           data-lazyload="false"

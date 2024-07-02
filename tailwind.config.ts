@@ -30,10 +30,10 @@ const config = {
       base: ["1.2rem", "1.625rem"],
       sm: ["1.125rem", "1.625rem"],
       md: ["1.5rem", "2.25rem"],
-      lg: ["2.1rem", "2.25rem"],
-      xl: ["2.25rem", "2.75rem"],
-      "2xl": ["3rem", "3rem"],
-      "3xl": ["5rem", "2.75rem"],
+      lg: ["2.1rem", "1.375"],
+      xl: ["2.25rem", "1.375"],
+      "2xl": ["3rem", "1.375"],
+      "3xl": ["5rem", "1.375"],
     },
     extend: {
       colors: {

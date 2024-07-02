@@ -639,6 +639,16 @@ export interface FaqSliceDefaultPrimaryFaqItemsItem {
  */
 export interface FaqSliceDefaultPrimary {
   /**
+   * Headeline field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.headeline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headeline: prismic.RichTextField;
+
+  /**
    * FAQ Items field in *Faq → Default → Primary*
    *
    * - **Field Type**: Group
