@@ -14,17 +14,25 @@ import Typing from "@/app/components/Typing";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <Heading as="h1" size="3xl" className="text-center text-black pt-2.5 pb-5">
+    <Heading
+      as="h1"
+      size="3xl"
+      className="relative text-center text-black pt-2.5 pb-5 z-10"
+    >
       {children}
     </Heading>
   ),
   heading6: ({ children }) => (
-    <Heading as="h6" size="xs" className="text-center text-black uppercase">
+    <Heading
+      as="h6"
+      size="xs"
+      className="text-center text-black uppercase z-10"
+    >
       {children}
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <p className="text-sm leading-6 md:leading-7 w-full font-lato font-base text-black1 text-center max-w-md">
+    <p className="relative text-sm leading-6 md:leading-7 w-full font-lato font-base text-black1 text-center max-w-md z-10">
       {children}
     </p>
   ),
@@ -54,7 +62,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       className="relative w-full overflow-hidden mx-auto max-w-screen-2xl flex flex-col align-center justify-center items-center py-10 lg:py-5 px-5 lg:px-8 2xl:px-20 z-10 container"
     >
       <>
-        <div className="relative flex flex-row items-center justify-center gap-2">
+        <div className="relative flex flex-row items-center justify-center gap-2 z-10">
           <div
             className="senja-embed"
             data-id="7dd2c08d-64d9-43b8-8cc3-5b19e2252648"
@@ -91,6 +99,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>
 
         <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[540px] xs:max-w-[340px]">
+          <div className="background-image-radial-container">
+            <div className="background-graphic"></div>
+          </div>
+
+          <div className="background-image-radial"></div>
+
           <PrismicRichText
             field={slice.primary.headeline}
             components={components}
@@ -108,19 +122,19 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[540px] xs:max-w-[340px] mt-6 ">
           <ButtonPrimary
             field={slice.primary.button_link}
-            className="p-3.5 lg:p-4 px-10 lg:px-[30px]"
+            className="p-3.5 lg:p-4 px-10 lg:px-[30px] z-10"
           >
             <>{slice.primary.button_label}</>
           </ButtonPrimary>
-          <p className="text-grey-500 text-xs font-light font-lato lg:text-sm mt-2">
+          <p className="relative text-grey-500 text-xs font-light font-lato lg:text-sm mt-2 z-10">
             <>{slice.primary.button_sub_text}</>
           </p>
         </div>
 
-        <PrismicNextImage
+        {/* <PrismicNextImage
           field={slice.primary.background_image}
           className="absolute right-[50%] top-[50%] translate-x-[50%] translate-y-[-50%] w-[410px] h-[202px] object-cover object-center z-[-1]"
-        />
+        /> */}
       </>
     </Bounded>
   );

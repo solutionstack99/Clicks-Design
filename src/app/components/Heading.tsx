@@ -28,14 +28,14 @@ export default function Heading({
   return (
     <Comp
       className={clsx(
-        "font-lato",
         size === "3xl" &&
-          "text-2xl md:text-3xl font-lato w-full leading-10 md:leading-none",
-        size === "2xl" && "text-xl md:text-2xl font-lato w-full leading-snug",
-        size === "xl" && "text-md md:text-xl font-lato w-full leading-snug",
-        size === "md" && "text-md md:text-md font-lato w-full leading-7",
+          "text-2xl md:text-3xl font-manrope w-full leading-10 md:leading-none",
+        size === "2xl" &&
+          "text-xl md:text-2xl font-manrope w-full leading-snug",
+        size === "xl" && "text-md md:text-xl font-manrope w-full leading-snug",
+        size === "md" && "text-md md:text-md font-manrope w-full leading-7",
         size === "lg" &&
-          "text-lg md:text-lg font-lato w-full leading-9 md:leading-7",
+          "text-lg md:text-lg font-manrope w-full leading-9 md:leading-7",
         size === "sm" && "text-sm md:text-sm font-lato w-full",
         size === "base" && "text-base md:text-base font-lato w-fit",
         size === "s" && "text-s md:text-s font-lato w-full",

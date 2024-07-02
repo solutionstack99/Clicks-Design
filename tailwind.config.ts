@@ -22,6 +22,7 @@ const config = {
     },
     fontFamily: {
       lato: ["Lato", "sans-serif"],
+      manrope: ["Manrope", "sans-serif"],
     },
     fontSize: {
       xxs: ["0.7rem", "1rem"],
@@ -101,6 +102,10 @@ const config = {
       boxShadowButton: {
         "box-shadow":
           "rgba(74, 146, 255, 0.72) 0px 0.602187px 3.01094px -1.25px inset, rgba(74, 146, 255, 0.635) 0px 2.28853px 11.4427px -2.5px inset, rgba(74, 146, 255, 0.25) 0px 10px 50px -3.75px inset, rgba(0, 0, 0, 0.184) 0px 0.796192px 0.796192px -0.9375px, rgba(0, 0, 0, 0.173) 0px 2.41451px 2.41451px -1.875px, rgba(0, 0, 0, 0.15) 0px 6.38265px 6.38265px -2.8125px, rgba(0, 0, 0, 0.063) 0px 20px 20px -3.75px, rgba(255, 231, 222, 0.25) 0px -6px 8px 0px inset",
+      },
+      backgroundImageRadial: {
+        background:
+          "radial-gradient(64.4 % 50 % at 50.6 % 56.2 %, rgba(255, 255, 255, 0) 0 %, rgb(255, 255, 255) 100 %)",
       },
       keyframes: {
         "accordion-down": {
