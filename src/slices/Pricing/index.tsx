@@ -132,12 +132,12 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                         />
 
                         <div
-                          className={`${item.highlight ? "bg-lightblue/20" : "bg-primary/10"} rounded-[24px] py-[1.5px] px-2`}
+                          className={`${item.highlight ? "bg-primary/10" : "bg-lightblue/20"} rounded-[24px] py-[1.5px] px-2`}
                         >
                           <>
                             {item.has_ribbon ? (
                               <p
-                                className={`${item.highlight ? "text-bluebackground" : "text-primary"} font-lato text-xs font-semibold`}
+                                className={`${item.highlight ? "text-primary" : "text-bluebackground"} font-lato text-xs font-semibold`}
                               >
                                 {item.ribbon_label}
                               </p>
@@ -236,7 +236,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                         />
                       </div>
                       <div
-                        className={`${item.highlight ? "bg-lightblue/20" : "bg-primary/10"} rounded-[24px] py-[1.5px] px-2 flex justify-end items-end w-fit`}
+                        className={`${item.highlight ? "bg-primary/10" : "bg-lightblue/20"} rounded-[24px] py-[1.5px] px-2 flex justify-end items-end w-fit`}
                       >
                         <PrismicRichText
                           field={item.price_extra}
