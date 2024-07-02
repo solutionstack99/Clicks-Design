@@ -81,6 +81,21 @@
 }
 
 @layer components {
+  .background-image-radial-grey {
+    background: radial-gradient(64.4% 50% at 50.6% 56.2%, rgba(255, 255, 255, 0) 0%, rgb(231 231 231 / 90%) 0.1%)
+    );
+    flex: 0 0 auto;
+    height: 100%;
+    left: calc(2.13163e-14%);
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+@layer components {
   .background-image-radial-container {
     flex: 0 0 auto;
     height: 60%;
@@ -119,6 +134,54 @@
       30px 30px,
       30px 30px;
     border-radius: 0px;
+  }
+}
+
+@layer components {
+  .recent-works-container {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 10px;
+    height: 118vh;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+@layer components {
+  .recent-works-inner {
+    place-content: flex-start center;
+    border-radius: 12px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 10px;
+    height: min-content;
+    left: 50%;
+    max-width: 100%;
+    overflow: visible;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+@layer components {
+  .recent-works-inner-items {
+    flex: 0 0 auto;
+    height: 967px;
+    overflow: visible;
+    position: relative;
+    width: 2000px;
   }
 }
 

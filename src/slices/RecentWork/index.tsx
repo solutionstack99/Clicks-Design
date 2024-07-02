@@ -18,9 +18,11 @@ const RecentWork = ({ slice }: RecentWorkProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="relative"
     >
+      <div className="background-image-radial-grey"></div>
       <div className="flex flex-col items-center lg:mt-[-50px]">
-        <div className="relative">
+        <div className="relative z-10">
           <div className="flex flex-col sm:flex-row items-center gap-5 overflow-y-hidden max-h-[200vh] my-24 cursor-pointer">
             {slice.primary.works.map((item, index) => {
               return (
@@ -29,7 +31,10 @@ const RecentWork = ({ slice }: RecentWorkProps): JSX.Element => {
                   className={index !== 1 ? "translate-y-20" : undefined}
                 >
                   <PrismicNextLink field={item.link}>
-                    <PrismicNextImage field={item.image} />
+                    <PrismicNextImage
+                      field={item.image}
+                      className="border-8 border-white rounded-t-[24px] shadow-lg w-[470px] h-auto object-cover"
+                    />
                   </PrismicNextLink>
                 </div>
               );
