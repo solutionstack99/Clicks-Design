@@ -35,7 +35,7 @@
 								"icons",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "2",
+									"value": "grow_your_reach",
 									"type": "Select"
 								}
 							],
@@ -89,7 +89,7 @@
 			},
 			"background_color": {
 				"__TYPE__": "FieldContent",
-				"value": "grey",
+				"value": "none",
 				"type": "Select"
 			},
 			"border_radius": {
@@ -100,6 +100,11 @@
 			"top_padding": {
 				"__TYPE__": "BooleanContent",
 				"value": false
+			},
+			"section_background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "light-grey-linear",
+				"type": "Select"
 			}
 		},
 		"items": []

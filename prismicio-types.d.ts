@@ -1169,7 +1169,14 @@ export interface SectionColumnsSliceDefaultPrimaryColumnsItem {
    * - **API ID Path**: section_columns.default.primary.columns[].icons
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  icons: prismic.SelectField<"1" | "2">;
+  icons: prismic.SelectField<
+    | "design_disconnect"
+    | "browse_zone"
+    | "website_build_trap"
+    | "conversion_focused_design"
+    | "high_end_branding"
+    | "grow_your_reach"
+  >;
 
   /**
    * Column Headeline field in *SectionColumns → Default → Primary → Columns*
@@ -1196,6 +1203,16 @@ export interface SectionColumnsSliceDefaultPrimaryColumnsItem {
  * Primary content in *SectionColumns → Default → Primary*
  */
 export interface SectionColumnsSliceDefaultPrimary {
+  /**
+   * Section Background Color field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_columns.default.primary.section_background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  section_background_color: prismic.SelectField<"light-grey-linear" | "none">;
+
   /**
    * Top Padding field in *SectionColumns → Default → Primary*
    *
@@ -1279,7 +1296,7 @@ export interface SectionColumnsSliceDefaultPrimary {
    * - **API ID Path**: section_columns.default.primary.background_color
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_color: prismic.SelectField<"grey" | "black" | "white", "filled">;
+  background_color: prismic.SelectField<"grey" | "white" | "none", "filled">;
 
   /**
    * Border Radius field in *SectionColumns → Default → Primary*

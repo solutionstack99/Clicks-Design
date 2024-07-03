@@ -12,6 +12,17 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "section_background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Section Background Color",
+            "placeholder": "",
+            "options": [
+              "light-grey-linear",
+              "none"
+            ]
+          }
+        },
         "top_padding": {
           "type": "Boolean",
           "config": {
@@ -51,8 +62,12 @@
                   "label": "Icons",
                   "placeholder": "",
                   "options": [
-                    "1",
-                    "2"
+                    "design_disconnect",
+                    "browse_zone",
+                    "website_build_trap",
+                    "conversion_focused_design",
+                    "high_end_branding",
+                    "grow_your_reach"
                   ]
                 }
               },
@@ -108,8 +123,8 @@
             "placeholder": "",
             "options": [
               "grey",
-              "black",
-              "white"
+              "white",
+              "none"
             ],
             "default_value": "grey"
           }
