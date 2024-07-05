@@ -132,7 +132,7 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-10 pt-16 px-5 lg:px-8 2xl:px-20"
+      className="bg-grey-900/40 mx-5 pb-10 pt-16 p-0 sm:px-5 lg:px-8 2xl:px-20 rounded-[45px]"
     >
       <div className="container mx-auto max-w-screen-2xl pb-10 lg:pb-20">
         <div className="flex flex-col justify-between text-center items-center">
@@ -233,13 +233,13 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
             </>
           </div>
 
-          <div className="pt-16 flex flex-col justify-flex-start text-center items-center">
+          <div className="pt-16 pb-9 sm:pb-0 flex flex-col justify-flex-start text-center items-center">
             <PrismicRichText
               field={slice.primary.process_title}
               components={components}
             />
           </div>
-          <ul className="text-center grid grid-cols-1 lg:grid-cols-3 p-10 gap-10 lg:gap-9">
+          <ul className="text-center grid grid-cols-1 lg:grid-cols-3 p-0 sm:p-10 gap-10 lg:gap-9">
             {slice.primary.process.map((item, index) => {
               return (
                 <li
@@ -254,7 +254,7 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
                   </span>
                   <PrismicNextImage
                     field={item.task_image}
-                    className="max-w-[300px] h-auto"
+                    className="w-auto sm:max-w-[300px] h-auto"
                   />
                 </li>
               );

@@ -17,7 +17,7 @@
               "config": {
                 "label": "Social Icons",
                 "placeholder": "",
-                "options": ["x", "linkedin", "email"]
+                "options": ["x", "email"]
               }
             },
             "link": {

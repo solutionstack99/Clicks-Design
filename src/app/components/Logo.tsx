@@ -10,7 +10,10 @@ export default async function Logo() {
   return (
     <div className="flex flex-shrink-0">
       <Link href="/">
-        <PrismicNextImage field={settings.data.logo} className="w-[150px]" />
+        <PrismicNextImage
+          field={settings.data.logo}
+          className="w-[135px] sm:w-[150px]"
+        />
       </Link>
     </div>
   );

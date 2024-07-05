@@ -16,7 +16,9 @@ export default async function Footer() {
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 border-t border-black">
         <div className="flex flex-col items-center sm:justify-between sm:items-start flex-wrap gap-9 pt-6">
           <Logo />
-          <p>&#169; Weesp {new Date().getFullYear()}. All rights reserved.</p>
+          <p className="text-center sm:text-right">
+            &#169; Weesp {new Date().getFullYear()}. All rights reserved.
+          </p>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 ">

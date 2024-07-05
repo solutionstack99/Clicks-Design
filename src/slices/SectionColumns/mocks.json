@@ -94,7 +94,7 @@
 			},
 			"border_radius": {
 				"__TYPE__": "FieldContent",
-				"value": "bottom right bottom left",
+				"value": "top right top left",
 				"type": "Select"
 			},
 			"top_padding": {

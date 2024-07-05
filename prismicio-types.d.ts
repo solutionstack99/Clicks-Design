@@ -304,7 +304,7 @@ export interface SocialIconsDocumentDataIconsItem {
    * - **API ID Path**: social_icons.icons[].social_icons
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  social_icons: prismic.SelectField<"x" | "linkedin" | "email">;
+  social_icons: prismic.SelectField<"x" | "email">;
 
   /**
    * Link field in *Social Icons → Icons*
@@ -1214,6 +1214,31 @@ export interface SectionColumnsSliceDefaultPrimary {
   section_background_color: prismic.SelectField<"light-grey-linear" | "none">;
 
   /**
+   * Background Color field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: grey
+   * - **API ID Path**: section_columns.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<"grey" | "white" | "none", "filled">;
+
+  /**
+   * Border Radius field in *SectionColumns → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: top right top left
+   * - **API ID Path**: section_columns.default.primary.border_radius
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  border_radius: prismic.SelectField<
+    "top right top left" | "bottom right bottom left" | "none",
+    "filled"
+  >;
+
+  /**
    * Top Padding field in *SectionColumns → Default → Primary*
    *
    * - **Field Type**: Boolean
@@ -1286,31 +1311,6 @@ export interface SectionColumnsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField;
-
-  /**
-   * Background Color field in *SectionColumns → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: grey
-   * - **API ID Path**: section_columns.default.primary.background_color
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  background_color: prismic.SelectField<"grey" | "white" | "none", "filled">;
-
-  /**
-   * Border Radius field in *SectionColumns → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: top right top left
-   * - **API ID Path**: section_columns.default.primary.border_radius
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  border_radius: prismic.SelectField<
-    "top right top left" | "bottom right bottom left",
-    "filled"
-  >;
 }
 
 /**

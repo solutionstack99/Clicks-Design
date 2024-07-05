@@ -23,6 +23,32 @@
             ]
           }
         },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "",
+            "options": [
+              "grey",
+              "white",
+              "none"
+            ],
+            "default_value": "grey"
+          }
+        },
+        "border_radius": {
+          "type": "Select",
+          "config": {
+            "label": "Border Radius",
+            "placeholder": "",
+            "options": [
+              "top right top left",
+              "bottom right bottom left",
+              "none"
+            ],
+            "default_value": "top right top left"
+          }
+        },
         "top_padding": {
           "type": "Boolean",
           "config": {
@@ -114,31 +140,6 @@
             "label": "Button Link",
             "placeholder": "",
             "select": null
-          }
-        },
-        "background_color": {
-          "type": "Select",
-          "config": {
-            "label": "Background Color",
-            "placeholder": "",
-            "options": [
-              "grey",
-              "white",
-              "none"
-            ],
-            "default_value": "grey"
-          }
-        },
-        "border_radius": {
-          "type": "Select",
-          "config": {
-            "label": "Border Radius",
-            "placeholder": "",
-            "options": [
-              "top right top left",
-              "bottom right bottom left"
-            ],
-            "default_value": "top right top left"
           }
         }
       },
