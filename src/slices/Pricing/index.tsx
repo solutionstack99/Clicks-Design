@@ -8,6 +8,7 @@ import Bounded from "@/app/components/Bounded";
 import Heading from "@/app/components/Heading";
 import ButtonPrimary from "@/app/components/ButtonPrimary";
 import Button from "@/app/components/Button";
+import { PrismicNextLink } from "@prismicio/next";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -102,7 +103,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 lg:pb-5 pt-16 px-5 lg:px-8 2xl:px-20"
+      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 lg:pb-5 pt-20 md:pt-32 px-5 lg:px-8 2xl:px-20"
     >
       <div className="w-full lg:max-w-4xl mx-auto">
         <div className="flex flex-col justify-between text-center items-center">
@@ -179,22 +180,29 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                     {/* End Header */}
 
                     {/* Start Benefit List */}
-                    <>
-                      {item.show_primary_button ? (
-                        <ButtonPrimary
-                          field={item.cta_button_link}
-                          className="w-full"
-                        >
-                          <span className="w-full">
-                            {item.cta_button_label}
-                          </span>
-                        </ButtonPrimary>
-                      ) : (
-                        <Button field={item.cta_button_link} className="w-full">
-                          <>{item.cta_button_label}</>
-                        </Button>
-                      )}
-                    </>
+                    {item.show_primary_button ? (
+                      <ButtonPrimary
+                        field={item.cta_button_link}
+                        className="w-full"
+                      >
+                        <span className="w-full">{item.cta_button_label}</span>
+                      </ButtonPrimary>
+                    ) : (
+                      <Button field={item.cta_button_link} className="w-full">
+                        <>{item.cta_button_label}</>
+                      </Button>
+                    )}
+
+                    <div className="flex flex-col justify-center items-center w-full">
+                      <PrismicNextLink
+                        field={item.cta_link}
+                        className="font-lato text-xs text-black hover:text-grey-500 underline decoration-[2px] decoration-dotted underline-offset-2"
+                      >
+                        {item.cta_label}
+                        <span className="pl-1">→</span>
+                      </PrismicNextLink>
+                    </div>
+
                     <div className="flex flex-col justify-start text-left items-start w-full border-b border-b-grey-900">
                       <PrismicRichText
                         field={item.benefit_list}
@@ -238,10 +246,11 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                       <div
                         className={`${item.highlight ? "bg-primary/10" : "bg-lightblue/20"} rounded-[24px] py-[1.5px] px-2 flex justify-end items-end w-fit`}
                       >
-                        <PrismicRichText
-                          field={item.price_extra}
-                          components={extraComponents}
-                        />
+                        <p
+                          className={`${item.highlight ? "text-primary" : "text-bluebackground"} font-lato text-xs font-semibold`}
+                        >
+                          <span>+${item.price_extra}</span>
+                        </p>
                       </div>
                     </div>
                     {/* End Extra */}

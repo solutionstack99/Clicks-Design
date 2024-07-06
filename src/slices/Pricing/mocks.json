@@ -121,20 +121,6 @@
 								}
 							],
 							[
-								"price_extra",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Eu laborum officia incididunt eiusmod. Esse cillum velit mollit elit ipsum nisi culpa eiusmod adipisicing magna. Aliquip eu minim culpa irure exercitation consectetur quis amet duis nulla aliqua do eiusmod aute."
-											}
-										}
-									]
-								}
-							],
-							[
 								"extra",
 								{
 									"__TYPE__": "StructuredTextContent",
@@ -174,6 +160,32 @@
 								{
 									"__TYPE__": "FieldContent",
 									"value": "various",
+									"type": "Text"
+								}
+							],
+							[
+								"cta_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "jungle",
+									"type": "Text"
+								}
+							],
+							[
+								"cta_link",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com"
+									}
+								}
+							],
+							[
+								"price_extra",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "man",
 									"type": "Text"
 								}
 							]

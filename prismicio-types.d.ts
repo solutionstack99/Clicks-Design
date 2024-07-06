@@ -969,6 +969,26 @@ export interface PricingSliceDefaultPrimaryPricingTablesItem {
   cta_button_link: prismic.LinkField;
 
   /**
+   * CTA Label field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField;
+
+  /**
+   * CTA Link field in *Pricing → Default → Primary → Pricing Tables*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.pricing_tables[].cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+
+  /**
    * Extra field in *Pricing → Default → Primary → Pricing Tables*
    *
    * - **Field Type**: Rich Text
@@ -981,12 +1001,12 @@ export interface PricingSliceDefaultPrimaryPricingTablesItem {
   /**
    * Price Extra field in *Pricing → Default → Primary → Pricing Tables*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: pricing.default.primary.pricing_tables[].price_extra
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  price_extra: prismic.RichTextField;
+  price_extra: prismic.KeyTextField;
 }
 
 /**

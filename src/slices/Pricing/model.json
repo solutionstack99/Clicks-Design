@@ -137,6 +137,21 @@
                   "select": null
                 }
               },
+              "cta_label": {
+                "type": "Text",
+                "config": {
+                  "label": "CTA Label",
+                  "placeholder": ""
+                }
+              },
+              "cta_link": {
+                "type": "Link",
+                "config": {
+                  "label": "CTA Link",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
               "extra": {
                 "type": "StructuredText",
                 "config": {
@@ -147,12 +162,10 @@
                 }
               },
               "price_extra": {
-                "type": "StructuredText",
+                "type": "Text",
                 "config": {
                   "label": "Price Extra",
-                  "placeholder": "",
-                  "allowTargetBlank": false,
-                  "multi": "paragraph,strong"
+                  "placeholder": ""
                 }
               }
             }
