@@ -173,7 +173,7 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
                           >
                             <PrismicNextImage
                               field={item.logo}
-                              className="w-40 h-4"
+                              className="w-10 sm:w-40 h-7"
                             />
                           </li>
                         );
