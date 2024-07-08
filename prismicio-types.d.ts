@@ -201,6 +201,17 @@ interface SettingsDocumentData {
   logo: prismic.ImageField<never>;
 
   /**
+   * Light Logo field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.light_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  light_logo: prismic.ImageField<never>;
+
+  /**
    * Navigation field in *Settings*
    *
    * - **Field Type**: Group

@@ -29,6 +29,14 @@
           "thumbnails": []
         }
       },
+      "light_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Light Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "navigation": {
         "type": "Group",
         "config": {

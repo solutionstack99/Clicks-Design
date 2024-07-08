@@ -13,7 +13,7 @@ const components: JSXMapSerializer = {
     <Heading
       as="h2"
       size="2xl"
-      className="text-center font-semibold text-black pt-2.5 pb-7 md:max-w-[800px]"
+      className="text-center font-semibold text-white pt-2.5 pb-7 md:max-w-[800px]"
     >
       {children}
     </Heading>
@@ -32,18 +32,15 @@ const CtaRow = ({ slice }: CtaRowProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 md:pb-36 pt-10 md:pt-56 px-5 lg:px-8 2xl:px-20"
+      className="overflow-hidden flex-col align-center justify-center py-10 md:py-36 px-5 lg:px-8 2xl:px-20 bg-black"
     >
-      <div className="flex flex-col justify-center items-center w-full mx-auto">
+      <div className="container mx-auto max-w-screen-2xl flex flex-col justify-center items-center w-full border-[1px] border-grey-200 rounded-[45px] p-10">
         <PrismicRichText
           field={slice.primary.headeline}
           components={components}
         />
-        <ButtonPrimary
-          field={slice.primary.button_link}
-          className="w-full md:max-w-[1200px]"
-        >
-          <p className="font-lato text-white text-md sm:text-2xl">
+        <ButtonPrimary field={slice.primary.button_link}>
+          <p className="font-lato text-white text-md">
             {slice.primary.button_label}
           </p>
         </ButtonPrimary>

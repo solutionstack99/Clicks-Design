@@ -38,7 +38,7 @@ const Faq = ({ slice }: FaqProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-grey-900/40 mx-5 px-5 lg:px-8 2xl:px-20 py-32 rounded-[45px]"
+      className="bg-grey-900/20 mx-5 px-5 lg:px-8 2xl:px-20 py-32 rounded-[45px]"
     >
       <div className="container w-full mx-auto flex flex-col justify-center items-center">
         <PrismicRichText

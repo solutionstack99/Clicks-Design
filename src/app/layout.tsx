@@ -18,10 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const settings = await create.getSingle("settings");
   return {
-    title: settings.data.meta_title || "Weesp",
+    title: settings.data.meta_title || "Click Design Agency",
     description:
       settings.data.meta_description ||
-      "Weesp is a web design and web development agency that helps founders drive sales.",
+      "Click Design Agency is a web design and web development agency that helps founders drive sales.",
     openGraph: {
       images: [settings.data.meta_image.url || ""],
     },
@@ -39,7 +39,7 @@ export default function RootLayout({
         <Providers>
           <Header />
 
-          <main className="py-10">{children}</main>
+          <main className="pt-10">{children}</main>
           <Footer />
         </Providers>
       </body>
