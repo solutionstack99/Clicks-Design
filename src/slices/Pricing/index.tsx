@@ -105,7 +105,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 lg:pb-5 pt-20 md:pt-32 px-5 lg:px-8 2xl:px-20"
     >
-      <div className="w-full lg:max-w-4xl mx-auto">
+      <div className="w-full mx-auto">
         <div className="flex flex-col justify-between text-center items-center">
           <p className="text-xxs text-white font-light font-lato uppercase bg-primary rounded-full py-1 px-4">
             {slice.primary.section_label}
@@ -114,15 +114,15 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
             field={slice.primary.section_headeline}
             components={components}
           />
-
+          {/* grid grid-cols-1 lg:grid-cols-3 */}
           {/* Start Pricing Cards */}
-          <div className="ralative text-center grid grid-cols-1 lg:grid-cols-2 p-2 gap-2 lg:gap-9 w-full">
+          <div className="ralative text-center flex flex-col lg:flex-row flex-wrap lg:flex-nowrap p-2 gap-2 lg:gap-9 max-w-[500px] lg:max-w-none lg:w-full">
             <>
               {slice.primary.pricing_tables.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className={`flex flex-col justify-between text-left items-start flex-wrap mt-20 sm:min-h-[500px] lg:max-h-[900px] lg:max-w-[700px] w-full shadow-md col-span-1 border-0 rounded-[24px] p-7 gap-5 hover:mt-[1px] ease-in duration-300 ${item.highlight ? "bg-gradient-linear-light-blue" : "bg-white"}`}
+                    className={`flex flex-col justify-between text-left items-start flex-wrap mt-20 sm:min-h-[500px] lg:max-h-[900px] w-full lg:max-w-[700px] shadow-md col-span-1 border-0 rounded-[24px] p-7 gap-5 hover:mt-[1px] ease-in duration-300 ${item.highlight ? "bg-gradient-linear-light-blue" : "bg-white"}`}
                   >
                     {/* Start Header */}
                     <div className="flex flex-col justify-between text-left items-start w-full border-b border-b-grey-900">
