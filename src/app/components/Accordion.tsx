@@ -5,15 +5,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FaqSlice } from "../../../prismicio-types";
-import {
-  JSXMapSerializer,
-  PrismicRichText,
-  SliceComponentProps,
-} from "@prismicio/react";
-import Bounded from "@/app/components/Bounded";
+import { JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 import Heading from "@/app/components/Heading";
-import ButtonPrimary from "@/app/components/ButtonPrimary";
-import Button from "@/app/components/Button";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -60,7 +53,7 @@ export function AccordionUI({ slice }: FaqsItemProps) {
         return (
           <div key={index}>
             <AccordionItem
-              value="item-1"
+              value={`item-${index}`}
               className="bg-white border-[1px] border-grey-900 rounded-[24px] p-5 mb-5"
             >
               <AccordionTrigger>
