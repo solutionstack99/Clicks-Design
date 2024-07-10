@@ -193,7 +193,10 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
           </div>
         </div>
 
-        <div className="pt-16 flex flex-col justify-between text-center items-center">
+        <div
+          id="howitworks"
+          className="pt-16 flex flex-col justify-between text-center items-center"
+        >
           <p className="text-xxs text-white font-light font-lato uppercase bg-primary rounded-full py-1 px-4">
             {slice.primary.section_label}
           </p>

@@ -105,7 +105,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 lg:pb-5 pt-20 md:pt-32 px-5 lg:px-8 2xl:px-20"
     >
-      <div className="w-full mx-auto">
+      <div id="pricing" className="w-full mx-auto">
         <div className="flex flex-col justify-between text-center items-center">
           <p className="text-xxs text-white font-light font-lato uppercase bg-primary rounded-full py-1 px-4">
             {slice.primary.section_label}
@@ -125,7 +125,7 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                     className={`flex flex-col justify-between text-left items-start flex-wrap mt-20 sm:min-h-[500px] lg:max-h-[900px] w-full lg:max-w-[700px] shadow-md col-span-1 border-0 rounded-[24px] p-7 gap-5 hover:mt-[1px] ease-in duration-300 ${item.highlight ? "bg-gradient-linear-light-blue" : "bg-white"}`}
                   >
                     {/* Start Header */}
-                    <div className="flex flex-col justify-between text-left items-start w-full border-b border-b-grey-900">
+                    <div className="flex flex-col justify-between text-left items-start w-full">
                       <div className="flex flex-row justify-between w-full">
                         <PrismicRichText
                           field={item.plan}
