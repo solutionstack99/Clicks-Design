@@ -48,17 +48,17 @@ const CaseStudies = ({ slice }: CaseStudiesProps): JSX.Element => {
         {slice.primary.images.map((item, index) => {
           return (
             <div key={index} className="flex flex-col items-center gap-5">
-              <PrismicNextImage field={item.image} />
+              <PrismicNextImage field={item.image} className="max-w-2xl" />
             </div>
           );
         })}
-        <div className="flex flex-col justify-center items-center mt-8">
+        <div className="flex flex-col justify-center items-center my-16">
           {slice.primary.show_primary_button ? (
             <ButtonPrimary field={slice.primary.button_link}>
               <>{slice.primary.button_label}</>
             </ButtonPrimary>
           ) : null}
-          <p className="text-grey-500 text-xs font-light font-lato lg:text-sm mt-2">
+          <p className="text-grey-500 text-xs font-light font-lato italic mt-2">
             <>{slice.primary.button_sub_text}</>
           </p>
         </div>
