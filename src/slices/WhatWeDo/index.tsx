@@ -134,7 +134,10 @@ const WhatWeDo = async ({ slice }: WhatWeDoProps): Promise<JSX.Element> => {
       data-slice-variation={slice.variation}
       className="bg-grey-900/20 mx-5 pb-10 pt-16 p-0 sm:px-5 lg:px-8 2xl:px-20 rounded-[45px]"
     >
-      <div className="container mx-auto max-w-screen-2xl pb-10 lg:pb-20">
+      <div
+        id="whatwedo"
+        className="container mx-auto max-w-screen-2xl pb-10 lg:pb-20"
+      >
         <div className="flex flex-col justify-between text-center items-center">
           <PrismicRichText
             field={slice.primary.headeline}

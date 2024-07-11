@@ -103,9 +103,9 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 lg:pb-5 pt-20 md:pt-32 px-5 lg:px-8 2xl:px-20"
+      className="container overflow-hidden mx-auto max-w-screen-2xl flex-col align-center justify-center pb-10 lg:pb-5 pt-20 md:pt-24 px-5 lg:px-8 2xl:px-20"
     >
-      <div id="pricing" className="w-full mx-auto">
+      <div id="pricing" className="w-full mx-auto pt-4">
         <div className="flex flex-col justify-between text-center items-center">
           <p className="text-xxs text-white font-light font-lato uppercase bg-primary rounded-full py-1 px-4">
             {slice.primary.section_label}
