@@ -8,6 +8,12 @@ const config = {
     "./src/**/*.{ts,tsx}",
     "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
     "./@/**/*.{ts,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
+
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
     // Map over the labels and add them to the safelist
   ],
   prefix: "",
