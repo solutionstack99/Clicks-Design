@@ -33,7 +33,7 @@ const components: JSXMapSerializer = {
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <Heading as="p" size="base" className="text-center text-black-900">
+    <Heading as="p" size="s" className="text-center text-black-900">
       {children}
     </Heading>
   ),

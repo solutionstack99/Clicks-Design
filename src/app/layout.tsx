@@ -1,17 +1,17 @@
 import { createClient } from "@/prismicio"; // Move this line up
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+// import { Lato } from "next/font/google";
 import "./globals.css";
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 import Providers from "@/providers";
 
-const lato = Lato({
-  subsets: ["latin"],
-  variable: "--font-lato",
-  display: "swap",
-  weight: ["300", "400", "700", "900"],
-});
+// const lato = Lato({
+//   subsets: ["latin"],
+//   variable: "--font-lato",
+//   display: "swap",
+//   weight: ["300", "400", "700", "900"],
+// });
 
 export async function generateMetadata(): Promise<Metadata> {
   const create = createClient();
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={lato.variable}>
+      <body>
         <Providers>
           <Header />
 
