@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/app/components/ui/accordion";
 import { FaqSlice } from "../../../prismicio-types";
 import { JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 import Heading from "@/app/components/Heading";
