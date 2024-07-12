@@ -2,8 +2,8 @@ import { createClient } from "@/prismicio"; // Move this line up
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer"; // Change the import statement to use lowercase "footer"
+import Header from "../app/components/Header";
+import Footer from "../app/components/Footer";
 import Providers from "@/providers";
 
 const lato = Lato({
