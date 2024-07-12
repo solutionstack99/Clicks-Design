@@ -1,12 +1,12 @@
-import Bounded from "@/app/components/Bounded";
+import Bounded from "@/components/Bounded";
 import { Content } from "@prismicio/client";
 import {
   JSXMapSerializer,
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import Heading from "@/app/components/Heading";
-import ButtonPrimary from "@/app/components/ButtonPrimary";
+import Heading from "@/components/Heading";
+import ButtonPrimary from "@/components/ButtonPrimary";
 
 const icons = {
   design_disconnect: <DesignDisconnect />,

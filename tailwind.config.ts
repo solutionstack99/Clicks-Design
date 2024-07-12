@@ -3,15 +3,11 @@ import type { Config } from "tailwindcss";
 const config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./@/**/*.{ts,tsx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
-
     // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/slices/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     // Map over the labels and add them to the safelist
   ],
   prefix: "",
@@ -24,8 +20,8 @@ const config = {
       },
     },
     fontFamily: {
-      lato: ["Lato", "sans-serif"],
-      manrope: ["Manrope", "sans-serif"],
+      lato: ["var(--font-lato)", "sans-serif"],
+      manrope: ["var(--font-manrope)", "sans-serif"],
     },
     fontSize: {
       xxs: ["0.7rem", "1rem"],

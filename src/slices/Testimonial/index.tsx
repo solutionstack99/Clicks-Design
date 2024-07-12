@@ -4,8 +4,8 @@ import {
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import Heading from "@/app/components/Heading";
-import Bounded from "@/app/components/Bounded";
+import Heading from "@/components/Heading";
+import Bounded from "@/components/Bounded";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (

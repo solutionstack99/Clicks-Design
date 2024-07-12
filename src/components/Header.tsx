@@ -1,10 +1,10 @@
 import { PrismicNextLink } from "@prismicio/next";
 import { createClient } from "@/prismicio";
 
-import Logo from "@/app/components/Logo";
+import Logo from "@/components/Logo";
 import Navbar from "./Navbar";
 import Bounded from "./Bounded";
-import ButtonPrimary from "@/app/components/ButtonPrimary";
+import ButtonPrimary from "@/components/ButtonPrimary";
 
 export default async function Header() {
   const client = createClient();

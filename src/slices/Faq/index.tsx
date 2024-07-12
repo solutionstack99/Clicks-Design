@@ -1,7 +1,7 @@
-import { AccordionUI } from "@/app/components/Accordion";
-import Bounded from "@/app/components/Bounded";
+import { AccordionUI } from "@/components/Accordion";
+import Bounded from "@/components/Bounded";
 import { Content } from "@prismicio/client";
-import Heading from "@/app/components/Heading";
+import Heading from "@/components/Heading";
 import {
   JSXMapSerializer,
   PrismicRichText,

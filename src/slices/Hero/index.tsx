@@ -1,16 +1,16 @@
 import { PrismicNextImage } from "@prismicio/next";
 import Script from "next/script";
 
-import Bounded from "@/app/components/Bounded";
+import Bounded from "@/components/Bounded";
 import { Content } from "@prismicio/client";
 import {
   JSXMapSerializer,
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import Heading from "@/app/components/Heading";
-import ButtonPrimary from "@/app/components/ButtonPrimary";
-import Typing from "@/app/components/Typing";
+import Heading from "@/components/Heading";
+import ButtonPrimary from "@/components/ButtonPrimary";
+import Typing from "@/components/Typing";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (

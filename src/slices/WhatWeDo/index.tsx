@@ -6,9 +6,9 @@ import {
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import Bounded from "@/app/components/Bounded";
-import Heading from "@/app/components/Heading";
-import ButtonPrimary from "@/app/components/ButtonPrimary";
+import Bounded from "@/components/Bounded";
+import Heading from "@/components/Heading";
+import ButtonPrimary from "@/components/ButtonPrimary";
 import { ServicesDocumentData } from "../../../prismicio-types";
 import { PrismicNextImage } from "@prismicio/next";
 

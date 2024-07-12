@@ -1,5 +1,5 @@
-import Bounded from "@/app/components/Bounded";
-import ButtonPrimary from "@/app/components/ButtonPrimary";
+import Bounded from "@/components/Bounded";
+import ButtonPrimary from "@/components/ButtonPrimary";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";

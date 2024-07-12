@@ -3,10 +3,10 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/app/components/ui/accordion";
-import { FaqSlice } from "../../../prismicio-types";
+} from "@/components/ui/accordion";
+import { FaqSlice } from "../../prismicio-types";
 import { JSXMapSerializer, PrismicRichText } from "@prismicio/react";
-import Heading from "@/app/components/Heading";
+import Heading from "@/components/Heading";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
