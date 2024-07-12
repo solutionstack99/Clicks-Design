@@ -5,15 +5,13 @@ const config = {
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
     "./@/**/*.{ts,tsx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
 
     // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/slices/**/*.{js,ts,jsx,tsx}",
     // Map over the labels and add them to the safelist
   ],
   prefix: "",
