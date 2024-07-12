@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: settings.data.meta_title || "Click Design Agency",
     description:
       settings.data.meta_description ||
-      "Click Design Agency is a web design and web development agency that helps founders drive sales.",
+      "The # 1 design & development agency for early-staged startups, entrepreneurs, and creators. High-quality landing pages and websites. Reliable, world-class quality for one predictable fee. From pixel to perfection.",
     openGraph: {
       images: [settings.data.meta_image.url || ""],
     },

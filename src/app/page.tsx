@@ -16,7 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const page = await client.getSingle("homepage");
 
   return {
-    title: page.data.meta_title,
-    description: page.data.meta_description,
+    title: page.data.meta_title || "Click Design Agency",
+    description:
+      page.data.meta_description ||
+      "The # 1 design & development agency for early-staged startups, entrepreneurs, and creators. High-quality landing pages and websites. Reliable, world-class quality for one predictable fee. From pixel to perfection.",
   };
 }
