@@ -4,10 +4,10 @@ import {
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
+import { PrismicNextLink } from "@prismicio/next";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import ButtonPrimary from "@/components/ButtonPrimary";
-import { PrismicNextLink } from "@prismicio/next";
 import ButtonSecoundary from "@/components/ButtonSecoundary";
 
 const components: JSXMapSerializer = {
