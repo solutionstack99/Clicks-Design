@@ -1,8 +1,8 @@
 import Bounded from "@/components/Bounded";
-import ButtonPrimary from "@/components/ButtonPrimary";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
+import ButtonSecoundary from "@/components/ButtonSecoundary";
 
 /**
  * Props for `RecentWork`.
@@ -45,9 +45,9 @@ const RecentWork = ({ slice }: RecentWorkProps): JSX.Element => {
 
           <div className="flex flex-col items-center lg:mt-[-50px]">
             {slice.primary.show_primary_button ? (
-              <ButtonPrimary field={slice.primary.button_link}>
+              <ButtonSecoundary field={slice.primary.button_link}>
                 <>{slice.primary.button_label}</>
-              </ButtonPrimary>
+              </ButtonSecoundary>
             ) : null}
           </div>
         </div>

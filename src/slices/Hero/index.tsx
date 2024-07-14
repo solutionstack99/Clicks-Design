@@ -9,8 +9,8 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 import Heading from "@/components/Heading";
-import ButtonPrimary from "@/components/ButtonPrimary";
 import Typing from "@/components/Typing";
+import ButtonSecoundary from "@/components/ButtonSecoundary";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -120,12 +120,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>
 
         <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[540px] xs:max-w-[340px] mt-6 ">
-          <ButtonPrimary
+          <ButtonSecoundary
             field={slice.primary.button_link}
             className="p-3.5 lg:p-4 px-10 lg:px-[30px] z-10"
           >
             <>{slice.primary.button_label}</>
-          </ButtonPrimary>
+          </ButtonSecoundary>
           <p className="relative text-grey-500 text-xs font-light font-lato italic mt-2 z-10">
             <>{slice.primary.button_sub_text}</>
           </p>

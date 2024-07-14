@@ -7,8 +7,8 @@ import {
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import ButtonPrimary from "@/components/ButtonPrimary";
-import Button from "@/components/Button";
 import { PrismicNextLink } from "@prismicio/next";
+import ButtonSecoundary from "@/components/ButtonSecoundary";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -183,14 +183,17 @@ const Pricing = ({ slice }: PricingProps): JSX.Element => {
                     {item.show_primary_button ? (
                       <ButtonPrimary
                         field={item.cta_button_link}
-                        className="w-full"
+                        className="w-full rounded-[16px]"
                       >
                         <span className="w-full">{item.cta_button_label}</span>
                       </ButtonPrimary>
                     ) : (
-                      <Button field={item.cta_button_link} className="w-full">
+                      <ButtonSecoundary
+                        field={item.cta_button_link}
+                        className="w-full"
+                      >
                         <>{item.cta_button_label}</>
-                      </Button>
+                      </ButtonSecoundary>
                     )}
 
                     <div className="flex flex-col justify-center items-center w-full">

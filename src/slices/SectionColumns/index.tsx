@@ -6,7 +6,7 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 import Heading from "@/components/Heading";
-import ButtonPrimary from "@/components/ButtonPrimary";
+import ButtonSecoundary from "@/components/ButtonSecoundary";
 
 const icons = {
   design_disconnect: <DesignDisconnect />,
@@ -95,9 +95,9 @@ const SectionColumns = ({ slice }: SectionColumnsProps): JSX.Element => {
 
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mt-8">
           {slice.primary.show_primary_button ? (
-            <ButtonPrimary field={slice.primary.button_link}>
+            <ButtonSecoundary field={slice.primary.button_link}>
               <>{slice.primary.button_label}</>
-            </ButtonPrimary>
+            </ButtonSecoundary>
           ) : null}
         </div>
       </div>
