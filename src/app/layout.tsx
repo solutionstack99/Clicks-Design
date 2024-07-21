@@ -1,4 +1,5 @@
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import clsx from "clsx";
 import { createClient } from "@/prismicio"; // Move this line up
 import type { Metadata } from "next";
@@ -53,6 +54,7 @@ export default function RootLayout({
 
           <main className="pt-10">{children}</main>
           <Footer />
+          <GoogleAnalytics gaId="G-QNV65V4HHY" />
         </Providers>
       </body>
     </html>
