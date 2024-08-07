@@ -23,7 +23,7 @@ const RecentWork = ({ slice }: RecentWorkProps): JSX.Element => {
       <div className="background-image-radial-grey"></div>
       <div className="flex flex-col items-center lg:mt-[-50px]">
         <div className="relative z-10">
-          <div className="flex flex-col sm:flex-row items-center gap-5 overflow-y-hidden h-auto md:max-h-[200vh] my-24 cursor-pointer">
+          <div className="flex flex-col lg:flex-row items-center gap-5 overflow-y-hidden h-auto md:max-h-[200vh] my-24 cursor-pointer">
             {slice.primary.works.map((item, index) => {
               return (
                 <div

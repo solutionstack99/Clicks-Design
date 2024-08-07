@@ -45,11 +45,17 @@ const CaseStudies = ({ slice }: CaseStudiesProps): JSX.Element => {
       </div>
 
       <>
-        <div className="flex flex-row items-center gap-5">
+        <div className="flex flex-col lg:flex-row items-center gap-5">
           {slice.primary.images.map((item, index) => {
             return (
-              <div key={index} className="flex flex-row items-center gap-5">
-                <PrismicNextImage field={item.image} className="max-w-2xl" />
+              <div
+                key={index}
+                className="flex flex-row items-center gap-5 border-8 border-white rounded-t-[24px] shadow-lg"
+              >
+                <PrismicNextImage
+                  field={item.image}
+                  className="w-full md:max-w-2xl"
+                />
               </div>
             );
           })}
