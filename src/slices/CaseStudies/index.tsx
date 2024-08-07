@@ -66,7 +66,7 @@ const CaseStudies = ({ slice }: CaseStudiesProps): JSX.Element => {
               <>{slice.primary.button_label}</>
             </ButtonSecoundary>
           ) : null}
-          <p className="text-grey-500 text-xs font-light font-lato italic mt-2">
+          <p className="text-grey text-xs font-light font-lato italic mt-2">
             <>
               {slice.primary.button_sub_text}{" "}
               {new Date().toLocaleString("default", { month: "long" })}.

@@ -35,17 +35,18 @@ const CtaRow = ({ slice }: CtaRowProps): JSX.Element => {
       className="overflow-hidden flex-col align-center justify-center py-10 md:py-36 px-5 lg:px-8 2xl:px-20 bg-black"
     >
       <div className="container mx-auto max-w-screen-2xl flex flex-col justify-center items-center w-full border-[1px] border-grey-200 rounded-[45px] p-10">
+        <script
+          src="https://widget.senja.io/widget/4c66073c-e201-4a3b-9e99-742c2f9543f2/platform.js"
+          type="text/javascript"
+          async
+        ></script>
         <div
           className="senja-embed"
-          data-id="7dd2c08d-64d9-43b8-8cc3-5b19e2252648"
+          data-id="4c66073c-e201-4a3b-9e99-742c2f9543f2"
           data-mode="shadow"
           data-lazyload="false"
+          style={{ display: "block" }}
         ></div>
-        <script
-          async
-          type="text/javascript"
-          src="https://widget.senja.io/widget/7dd2c08d-64d9-43b8-8cc3-5b19e2252648/platform.js"
-        ></script>
         <PrismicRichText
           field={slice.primary.headeline}
           components={components}

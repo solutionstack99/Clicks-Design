@@ -126,7 +126,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           >
             <>{slice.primary.button_label}</>
           </ButtonSecoundary>
-          <p className="relative text-grey-500 text-xs font-light font-lato italic mt-2 z-10">
+          <p className="relative text-grey text-xs font-light font-lato italic mt-2 z-10">
             <>{slice.primary.button_sub_text}</>
           </p>
         </div>
