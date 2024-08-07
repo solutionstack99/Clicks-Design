@@ -120,10 +120,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>
 
         <div className="md:flex md:flex-col items-center text-center justify-center md:space-x-0 w-full md:max-w-[540px] xs:max-w-[340px] mt-6 ">
-          <ButtonSecoundary
-            field={slice.primary.button_link}
-            className="p-3.5 lg:p-4 px-10 lg:px-[30px] z-10"
-          >
+          <ButtonSecoundary field={slice.primary.button_link} className="z-10">
             <>{slice.primary.button_label}</>
           </ButtonSecoundary>
           <p className="relative text-grey text-xs font-light font-lato italic mt-2 z-10">

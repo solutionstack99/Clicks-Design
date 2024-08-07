@@ -22,7 +22,7 @@ export default async function Header() {
 
       <ButtonPrimary
         field={settings.data.cta_button_link}
-        className="relative block rounded-lg z-10"
+        className="relative block z-10"
       >
         <>{settings.data.cta_button_label}</>
       </ButtonPrimary>

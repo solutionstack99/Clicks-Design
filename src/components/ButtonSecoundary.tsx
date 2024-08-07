@@ -10,7 +10,7 @@ export default async function ButtonSecoundary({
     <Bounded
       as="button"
       className={clsx(
-        `relative button-Secoundary ease-out duration-30 overflow-hidden before:button-hover hover:before:translate-x-0 cursor-pointer py-2 px-10 font-lato text-white`,
+        `relative button-Secoundary ease-out duration-30 overflow-hidden before:button-hover hover:before:translate-x-0 cursor-pointer px-10 p-4 lg:px-[30px] font-lato text-white`,
         className
       )}
     >
