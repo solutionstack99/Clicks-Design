@@ -45,13 +45,15 @@ const CaseStudies = ({ slice }: CaseStudiesProps): JSX.Element => {
       </div>
 
       <>
-        {slice.primary.images.map((item, index) => {
-          return (
-            <div key={index} className="flex flex-col items-center gap-5">
-              <PrismicNextImage field={item.image} className="max-w-2xl" />
-            </div>
-          );
-        })}
+        <div className="flex flex-row items-center gap-5">
+          {slice.primary.images.map((item, index) => {
+            return (
+              <div key={index} className="flex flex-row items-center gap-5">
+                <PrismicNextImage field={item.image} className="max-w-2xl" />
+              </div>
+            );
+          })}
+        </div>
         <div className="flex flex-col justify-center items-center my-16">
           {slice.primary.show_primary_button ? (
             <ButtonSecoundary field={slice.primary.button_link}>

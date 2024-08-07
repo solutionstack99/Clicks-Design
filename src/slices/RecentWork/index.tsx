@@ -32,12 +32,12 @@ const RecentWork = ({ slice }: RecentWorkProps): JSX.Element => {
                     index !== 1 ? "translate-y-20 md:translate-y-0" : undefined
                   }
                 >
-                  <PrismicNextLink field={item.link}>
-                    <PrismicNextImage
-                      field={item.image}
-                      className="border-8 border-white rounded-t-[24px] shadow-lg w-full md:w-[470px] h-auto object-cover"
-                    />
-                  </PrismicNextLink>
+                  {/* <PrismicNextLink field={item.link}> */}
+                  <PrismicNextImage
+                    field={item.image}
+                    className="border-8 border-white rounded-t-[24px] shadow-lg w-full md:w-[470px] h-auto object-cover"
+                  />
+                  {/* </PrismicNextLink> */}
                 </div>
               );
             })}
