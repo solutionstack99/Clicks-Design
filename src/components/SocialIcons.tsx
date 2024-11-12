@@ -3,7 +3,7 @@ import { PrismicNextLink } from "@prismicio/next";
 
 const icons = {
   x: <XIcon />,
-  youTube: <YouTubeIcon />,
+  youtube: <YouTubeIcon />,
   email: <EmailIcon />,
 };
 

@@ -315,7 +315,7 @@ export interface SocialIconsDocumentDataIconsItem {
    * - **API ID Path**: social_icons.icons[].social_icons
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  social_icons: prismic.SelectField<"x" | "email">;
+  social_icons: prismic.SelectField<"x" | "email" | "youtube">;
 
   /**
    * Link field in *Social Icons → Icons*

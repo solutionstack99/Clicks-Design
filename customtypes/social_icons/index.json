@@ -17,7 +17,7 @@
               "config": {
                 "label": "Social Icons",
                 "placeholder": "",
-                "options": ["x", "email"]
+                "options": ["x", "email", "youtube"]
               }
             },
             "link": {
@@ -25,6 +25,7 @@
               "config": {
                 "label": "Link",
                 "placeholder": "",
+                "allowTargetBlank": false,
                 "select": null
               }
             }
