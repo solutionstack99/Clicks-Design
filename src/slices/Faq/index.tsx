@@ -8,6 +8,8 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 
+import type { JSX } from "react";
+
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
     <Heading

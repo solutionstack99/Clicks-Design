@@ -9,6 +9,8 @@ import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import ButtonSecoundary from "@/components/ButtonSecoundary";
 
+import type { JSX } from "react";
+
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
     <Heading

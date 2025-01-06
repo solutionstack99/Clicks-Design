@@ -12,6 +12,8 @@ import ButtonSecoundary from "@/components/ButtonSecoundary";
 import { ServicesDocumentData } from "../../../prismicio-types";
 import { PrismicNextImage } from "@prismicio/next";
 
+import type { JSX } from "react";
+
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
     <Heading

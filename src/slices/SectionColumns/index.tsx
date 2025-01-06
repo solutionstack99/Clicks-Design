@@ -8,6 +8,8 @@ import {
 import Heading from "@/components/Heading";
 import ButtonSecoundary from "@/components/ButtonSecoundary";
 
+import type { JSX } from "react";
+
 const icons = {
   design_disconnect: <DesignDisconnect />,
   browse_zone: <BrowseZone />,

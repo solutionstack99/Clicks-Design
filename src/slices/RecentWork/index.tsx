@@ -4,6 +4,8 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import ButtonSecoundary from "@/components/ButtonSecoundary";
 
+import type { JSX } from "react";
+
 /**
  * Props for `RecentWork`.
  */

@@ -12,6 +12,8 @@ import Heading from "@/components/Heading";
 import Typing from "@/components/Typing";
 import ButtonSecoundary from "@/components/ButtonSecoundary";
 
+import type { JSX } from "react";
+
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
     <Heading

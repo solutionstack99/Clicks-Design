@@ -1,10 +1,10 @@
-import { PrismicNextLink } from "@prismicio/next";
 import { createClient } from "@/prismicio";
 
 import Logo from "@/components/Logo";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import Bounded from "./Bounded";
-import ButtonPrimary from "@/components/ButtonPrimary";
+import ShimmerButton from "@/components/ui/shimmer-button";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 export default async function Header() {
   const client = createClient();
@@ -20,12 +20,14 @@ export default async function Header() {
 
       <Navbar />
 
-      <ButtonPrimary
-        field={settings.data.cta_button_link}
-        className="relative block z-10"
-      >
-        <>{settings.data.cta_button_label}</>
-      </ButtonPrimary>
+      <div className="z-1 flex items-center justify-center">
+        <ShimmerButton className="shadow-2xl">
+          <span className="whitespace-pre-wrap text-center text-sm font-lato leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-sm">
+            <>{settings.data.cta_button_label}</>
+          </span>
+          <ArrowRightIcon className="ml-1 size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+        </ShimmerButton>
+      </div>
     </Bounded>
   );
 }

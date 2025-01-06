@@ -82,8 +82,8 @@
   .background-image-radial {
     background: radial-gradient(
       64.4% 50% at 50.6% 56.2%,
-      rgba(255, 255, 255, 0) 0%,
-      rgb(255, 255, 255) 100%
+      rgba(0, 0, 0, 0) 0%,
+      rgb(0, 0, 0) 100%
     );
     flex: 0 0 auto;
     height: 100%;
@@ -248,7 +248,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 0%;
     --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
